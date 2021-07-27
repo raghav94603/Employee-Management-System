@@ -15,10 +15,10 @@ public class LoginAuthentication{
 	@Autowired
 	EmployeeDAO emp;
 	@RequestMapping("/")
-	public String Login() {
-		return ("login");
+	public ModelAndView Login() {
+		return new ModelAndView("loginPage");
 	}
-	@RequestMapping(value="/login", method=RequestMethod.POST)
+	@RequestMapping(value="login", method=RequestMethod.POST)
 	public ModelAndView LoginAuth(HttpServletRequest request)
 	{
 		String username=request.getParameter("usrname");
@@ -31,7 +31,7 @@ public class LoginAuthentication{
 		else 
 		{
 			//System.out.print("Success");
-			return new ModelAndView("#");
+			return new ModelAndView("Invalid_user");
 		}
 	
 	}

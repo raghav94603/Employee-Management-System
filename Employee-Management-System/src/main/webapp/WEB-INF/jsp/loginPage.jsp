@@ -79,7 +79,7 @@ width: 200px;
 
 
     <div class="container">
-        <form >
+        <form method="post" action="login">
           <label for="usrname">Username</label>
           <br>
           <input type="text" id="usrname" name="usrname" placeholder="Enter your username" required >
