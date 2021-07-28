@@ -31,7 +31,7 @@ public class LoginAuthentication{
 		else 
 		{
 			//System.out.print("Success");
-			return new ModelAndView("Invalid_user");
+			return new ModelAndView("dashboard");
 		}
 	
 	}
