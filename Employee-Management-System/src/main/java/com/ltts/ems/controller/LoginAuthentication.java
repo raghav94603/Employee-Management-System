@@ -3,34 +3,38 @@ package com.ltts.ems.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ltts.ems.repository.EmployeeDetailsDAO;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-@Controller
-public class LoginAuthentication{
+import com.ltts.ems.repository.EmployeeDAO;
+
+@RestController
+public class LoginAuthentication {
 	@Autowired
-	EmployeeDetailsDAO emp;
+	EmployeeDAO emp;
+
 	@RequestMapping("/")
-	public String Login() {
-		return ("login");
+	public ModelAndView Login() {
+		return new ModelAndView("loginPage");
 	}
-	@RequestMapping("/login")
-	public String LoginAuth(HttpServletRequest request)
-	{
-		String username=request.getParameter("usrname");
-		String password=request.getParameter("psw");
-		String uname=emp.getUserbyusername(username, password);
-		if(uname==null) {
-			System.out.print("Error");
-			return ("login");
+
+	@RequestMapping(value = "login", method = RequestMethod.POST)
+	public ModelAndView LoginAuth(HttpServletRequest request) {
+		String username = request.getParameter("usrname");
+		String password = request.getParameter("psw");
+		String uname = emp.getUserbyusername(username, password);
+		if (uname == null) {
+			// System.out.print("Error");
+			return new ModelAndView("Invalid_user");
+		} else {
+			// System.out.print("Success");
+			return new ModelAndView("dashboard");
+
 		}
-		else {
-			System.out.print("Success");
-			return ("dashboard");
-		}
-	
+
 	}
 
 }
