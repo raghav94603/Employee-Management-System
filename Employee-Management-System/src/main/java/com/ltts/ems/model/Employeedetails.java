@@ -35,6 +35,18 @@ public class Employeedetails {
 		private String EmployeeNumber;
 		private Date Dob;
 		private String Gender;
+		public int getID() {
+			return ID;
+		}
+
+
+
+		public void setID(int iD) {
+			ID = iD;
+		}
+
+
+
 		private Date DoJ;
 		private String Role;
 		private String Img;
