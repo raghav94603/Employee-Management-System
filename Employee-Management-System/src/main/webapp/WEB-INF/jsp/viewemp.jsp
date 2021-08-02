@@ -172,7 +172,7 @@ h2{
  <td><button onclick="window.location.href='edit.jsp';">
       Edit
     </button></td>
- <td><button onclick="window.location.href='delete.jsp';">
+ <td><button onclick="window.location.href='/api/delete/${bt.getID()}' ;">
       Delete
     </button></td>
 </tr>

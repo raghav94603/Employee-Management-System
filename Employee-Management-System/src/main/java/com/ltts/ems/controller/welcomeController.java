@@ -9,23 +9,28 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ltts.ems.model.Employeedetails;
-import com.ltts.ems.repository.EmployeeDAO;
+import com.ltts.ems.service.EmployeeService;
 
 @RestController
 public class welcomeController {
 
 	@Autowired
-	EmployeeDAO bd;
+	EmployeeService bd;
+	ModelAndView mv=new ModelAndView("viewemp");
 	@RequestMapping(value="/adminview")
 	public ModelAndView fourthMethod(Model model)
 	{
 		
-		ModelAndView mv=new ModelAndView("viewemp");
 		List<Employeedetails> bt=(List<Employeedetails>) bd.findAll();
 		model.addAttribute("Employeedetails", bt);
 		return mv;
 		
 		
+	}	
+	@RequestMapping(value="/addview")
+	public ModelAndView addview()
+	{
+		return mv;
 	}	
 	
 }
