@@ -1,5 +1,6 @@
 package com.ltts.ems.model;
 
+
 import java.sql.Date;
 
 import javax.persistence.Entity;
@@ -7,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="Employeedetails")
@@ -66,11 +68,14 @@ public class Employeedetails {
 			super();
 		}
 
-		
 	
-		public Employeedetails(String firstName, String lastName, String employeeNumber, Date dob, String gender,
-				Date doJ, String role, String img) {
+
+
+
+		public Employeedetails(String username, String firstName, String lastName, String employeeNumber, Date dob,
+				String gender, Date doJ, String role, String img, String password) {
 			super();
+			this.username = username;
 			FirstName = firstName;
 			LastName = lastName;
 			EmployeeNumber = employeeNumber;
@@ -79,6 +84,7 @@ public class Employeedetails {
 			DoJ = doJ;
 			Role = role;
 			Img = img;
+			this.password = password;
 		}
 
 
