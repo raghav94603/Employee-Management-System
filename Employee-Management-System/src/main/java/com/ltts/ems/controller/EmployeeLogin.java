@@ -12,7 +12,7 @@ import com.ltts.ems.model.Employeedetails;
 import com.ltts.ems.service.EmployeeService;
 
 @RestController
-public class LoginAuthentication {
+public class EmployeeLogin {
 	@Autowired
 	EmployeeService emp;
 
