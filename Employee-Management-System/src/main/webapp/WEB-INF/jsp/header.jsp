@@ -4,7 +4,7 @@
 <html>
 <style>
 .topnav {
-  background-color: #302F2F;
+  background-color: #e67e22;
   overflow: hidden;
 }
 
@@ -26,7 +26,7 @@
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: #e67e22;
   color: white;
 }
 
