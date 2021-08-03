@@ -1,16 +1,28 @@
 package com.ltts.ems.service;
 
-
-
 import java.util.List;
 
 import com.ltts.ems.model.Employeedetails;
 
 public interface EmployeeService {
-public List<Employeedetails> findAll();
-public Employeedetails findByUsernameAndPassword(String username, String password);
+	public List<Employeedetails> findAll();
 
-public Employeedetails save(Employeedetails theemp);
+	/**
+	 * @param username
+	 * @param password
+	 * @return
+	 */
+	public Employeedetails findByUsernameAndPassword(String username, String password);
 
-public Employeedetails deleteById(int id);
+	/**
+	 * @param theemp
+	 * @return
+	 */
+	public Employeedetails save(Employeedetails theemp);
+
+	/**
+	 * @param id
+	 * @return
+	 */
+	public Employeedetails deleteById(int id);
 }

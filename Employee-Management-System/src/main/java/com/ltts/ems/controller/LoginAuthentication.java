@@ -16,24 +16,28 @@ public class LoginAuthentication {
 	@Autowired
 	EmployeeService emp;
 
+	/**
+	 * @return
+	 */
 	@RequestMapping("/")
 	public ModelAndView Login() {
 		return new ModelAndView("loginPage");
 	}
 
+	/**
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public ModelAndView LoginAuth(HttpServletRequest request) {
 		String username = request.getParameter("usrname");
 		String password = request.getParameter("psw");
 		Employeedetails theEmployee = emp.findByUsernameAndPassword(username, password);
 		if (theEmployee == null) {
-			
+
 			return new ModelAndView("Invalid_user");
-		} 
-		else 
-		{
-		
-			
+		} else {
+
 			return new ModelAndView("dashboard");
 
 		}
