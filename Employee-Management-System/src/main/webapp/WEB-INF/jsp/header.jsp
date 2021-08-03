@@ -41,6 +41,7 @@
   <a class="active" href="/api/navdash">Dashboard</a>
   <a href="/api/navabout">About</a>
   <a href="/api/log">Logout</a>
+  <a href="/api/navdash">Back</a>
 </div>
 
 </body>
