@@ -38,9 +38,9 @@
 
 <body>
 <div class="topnav">
-  <a class="active" href="navdash">Dashboard</a>
-  <a href="navabout">About</a>
-  <a href="log">Logout</a>
+  <a class="active" href="/api/navdash">Dashboard</a>
+  <a href="/api/navabout">About</a>
+  <a href="/api/log">Logout</a>
 </div>
 
 </body>

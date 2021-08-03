@@ -41,6 +41,9 @@ public class Employeedetails {
 
 
 
+		/**
+		 * @param iD
+		 */
 		public void setID(int iD) {
 			ID = iD;
 		}
@@ -52,12 +55,18 @@ public class Employeedetails {
 		private String Img;
 		private String password;
 		
+		/**
+		 * @return
+		 */
 		public String getPassword() {
 			return password;
 		}
 
 
 
+		/**
+		 * @param password
+		 */
 		public void setPassword(String password) {
 			this.password = password;
 		}
@@ -89,57 +98,105 @@ public class Employeedetails {
 
 
 
+		/**
+		 * @return
+		 */
 		public String getFirstName() {
 			return FirstName;
 		}
+		/**
+		 * @param firstName
+		 */
 		public void setFirstName(String firstName) {
 			FirstName = firstName;
 		}
+		/**
+		 * @return
+		 */
 		public String getLastName() {
 			return LastName;
 		}
+		/**
+		 * @param lastName
+		 */
 		public void setLastName(String lastName) {
 			LastName = lastName;
 		}
+		/**
+		 * @return
+		 */
 		public Date getDob() {
 			return Dob;
 		}
+		/**
+		 * @param dob
+		 */
 		public void setDob(Date dob) {
 			Dob = dob;
 		}
 		
 	
+		/**
+		 * @return
+		 */
 		public String getEmployeeNumber() {
 			return EmployeeNumber;
 		}
 
+		/**
+		 * @param employeeNumber
+		 */
 		public void setEmployeeNumber(String employeeNumber) {
 			EmployeeNumber = employeeNumber;
 		}
 
+		/**
+		 * @return
+		 */
 		public String getGender() {
 			return Gender;
 		}
+		/**
+		 * @param gender
+		 */
 		public void setGender(String gender) {
 			Gender = gender;
 		}
+		/**
+		 * @return
+		 */
 		public Date getDoJ() {
 			return DoJ;
 		}
+		/**
+		 * @param doJ
+		 */
 		public void setDoJ(Date doJ) {
 			DoJ = doJ;
 		}
+		/**
+		 * @return
+		 */
 		public String getRole() {
 			return Role;
 		}
+		/**
+		 * @param role
+		 */
 		public void setRole(String role) {
 			Role = role;
 		}
 		
+		/**
+		 * @return
+		 */
 		public String getImg() {
 			return Img;
 		}
 
+		/**
+		 * @param img
+		 */
 		public void setImg(String img) {
 			Img = img;
 		}

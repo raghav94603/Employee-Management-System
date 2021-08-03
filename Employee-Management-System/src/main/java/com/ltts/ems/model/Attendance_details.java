@@ -37,42 +37,72 @@ public class Attendance_details {
 			this.valid_attendance = valid_attendance;
 		}
 
+		/**
+		 * @return
+		 */
 		public LocalDate getDate() {
 			return Date;
 		}
 
+		/**
+		 * @param date
+		 */
 		public void setDate(LocalDate date) {
 			Date = date;
 		}
 
+		/**
+		 * @return
+		 */
 		public LocalTime getLockin() {
 			return Lockin;
 		}
 
+		/**
+		 * @param lockin
+		 */
 		public void setLockin(LocalTime lockin) {
 			Lockin = lockin;
 		}
 
+		/**
+		 * @return
+		 */
 		public LocalTime getLockout() {
 			return Lockout;
 		}
 
+		/**
+		 * @param lockout
+		 */
 		public void setLockout(LocalTime lockout) {
 			Lockout = lockout;
 		}
 
+		/**
+		 * @return
+		 */
 		public float getAvgtime() {
 			return Avgtime;
 		}
 
+		/**
+		 * @param avgtime
+		 */
 		public void setAvgtime(float avgtime) {
 			Avgtime = avgtime;
 		}
 
+		/**
+		 * @return
+		 */
 		public String getValid_attendance() {
 			return valid_attendance;
 		}
 
+		/**
+		 * @param valid_attendance
+		 */
 		public void setValid_attendance(String valid_attendance) {
 			this.valid_attendance = valid_attendance;
 		}

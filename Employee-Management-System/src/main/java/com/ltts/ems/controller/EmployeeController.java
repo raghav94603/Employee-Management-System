@@ -16,21 +16,33 @@ import com.ltts.ems.service.EmployeeService;
 
 @RestController
 @RequestMapping("/api")
-public class CRUDController {
+public class EmployeeController {
 
 	@Autowired
 	EmployeeService emp;
 
+	/**
+	 * This method handles the request for adding employee details
+	 * @param theEmployee
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("/add")
-	public ModelAndView addUser(Employeedetails theEmployee,Model model) {
+	public ModelAndView addUser(Employeedetails theEmployee, Model model) {
 		emp.save(theEmployee);
 		List<Employeedetails> bt = (List<Employeedetails>) emp.findAll();
 		model.addAttribute("Employeedetails", bt);
 		return new ModelAndView("viewemp");
 	}
 
+	/**
+	 * This method handles the request for deleting employee details
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/delete/{id}")
-	public ModelAndView deleteUser(@PathVariable int id,Model model) {
+	public ModelAndView deleteUser(@PathVariable int id, Model model) {
 		emp.deleteById(id);
 		List<Employeedetails> bt = (List<Employeedetails>) emp.findAll();
 		model.addAttribute("Employeedetails", bt);
@@ -38,6 +50,11 @@ public class CRUDController {
 		return new ModelAndView("viewemp");
 	}
 
+	/**
+	 * This method handles the request for viewing employee details
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/adminview")
 	public ModelAndView fourthMethod(Model model) {
 
@@ -47,19 +64,37 @@ public class CRUDController {
 
 	}
 
+	/**
+	 * This method handles the request for addition of new employee details into the database
+	 * @return
+	 */
+	/**
+	 * @return
+	 */
 	@RequestMapping(value = "/addview")
 	public ModelAndView addview() {
 		return new ModelAndView("addview");
 	}
-
+	/**
+	 * This method handles the request for navigation bar
+	 * @return
+	 */
 	@RequestMapping(value = "/navdash")
 	public ModelAndView navview() {
 		return new ModelAndView("dashboard");
 	}
+	/**
+	 * This method handles the request for about
+	 * @return
+	 */
 	@RequestMapping(value = "/navabout")
 	public ModelAndView aboutview() {
 		return new ModelAndView("about");
 	}
+	/**
+	 * This method handles the request for logout
+	 * @return
+	 */
 	@RequestMapping(value = "/log")
 	public ModelAndView logOut() {
 		return new ModelAndView("loginPage");

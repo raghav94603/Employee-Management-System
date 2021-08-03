@@ -11,10 +11,10 @@
 <br><br>
 <div align="center">
 <h1 style="color: white;font-size: 40px">Developers</h1><br>
-<p style="color: white;font-size: 20px">Shine Jasmine</p><br>
 <p style="color: white;font-size: 20px">Raghav Asawa</p><br>
 <p style="color: white;font-size: 20px">Sarthak Naithani</p><br>
 <p style="color: white;font-size: 20px">Mrinal Lakhanpal</p><br>
+<p style="color: white;font-size: 20px">Shine Jasmine</p><br>
 <p style="color: white;font-size: 20px">Manoj R</p>
 
 </div>

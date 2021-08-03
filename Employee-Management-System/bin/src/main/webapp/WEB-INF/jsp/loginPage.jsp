@@ -19,7 +19,7 @@ input {
 /* Style the submit button */
 input[type=submit] {
 width: 200px;
-  background-color: #e67e22;
+  background-color: #04AA6D;
   color: white;
 }
 
@@ -41,9 +41,7 @@ width: 200px;
   padding: 20px;
   margin-top: 10px;
 }
-body{
-background: #302F2F;
-}
+
 #message p {
   padding: 10px 35px;
   font-size: 18px;
@@ -70,19 +68,18 @@ background: #302F2F;
   left: -35px;
   content: "✖";
 }
-
 </style>
 </head>
 <body>
 
-<h1 style="text-align:center; color:White">Welcome</h1>
-<h2 style="text-align:center; color:White">Login Page</h2>
+<h1 style="text-align:center">Welcome</h1>
+<h2 style="text-align:center">Login Page</h2>
 
 
 
 
     <div class="container">
-        <form method="post" action="/login">
+        <form method="post" action="login">
           <label for="usrname">Username</label>
           <br>
           <input type="text" id="usrname" name="usrname" placeholder="Enter your username" required >
