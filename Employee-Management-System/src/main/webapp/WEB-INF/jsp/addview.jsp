@@ -8,8 +8,8 @@ body {
 	font-family: 'Lato', sans-serif;
 	color: White;
 	padding: 20px 25px;
-	border-radius: 5px; 
-	background-color : #302F2F;
+	border-radius: 5px;
+	background-color: #302F2F;
 	padding: 20px;
 	background-color: #302F2F;
 }
