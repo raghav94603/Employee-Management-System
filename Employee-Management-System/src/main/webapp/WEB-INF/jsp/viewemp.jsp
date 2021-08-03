@@ -53,13 +53,13 @@ h2{
 }
 
 .fl-table thead th {
-    color: #ffffff;
+    color: #000000;
     background: #e67e22;
 }
 
 
 .fl-table thead th:nth-child(odd) {
-    color: #ffffff;
+    color: #000000;
     background: #e67e22;
 }
 
