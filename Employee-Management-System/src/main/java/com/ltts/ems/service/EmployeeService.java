@@ -7,6 +7,7 @@ import java.util.List;
 import com.ltts.ems.model.Employeedetails;
 
 public interface EmployeeService {
+	public Employeedetails findById(int id);
 /**
  * @return
  */

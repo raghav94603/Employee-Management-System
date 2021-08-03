@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -74,6 +73,28 @@ public class EmployeeController {
 	@RequestMapping(value = "/addview")
 	public ModelAndView addview() {
 		return new ModelAndView("addview");
+	}
+	
+	/**
+	 * @param id
+	 * @param m
+	 * @return
+	 */
+	@RequestMapping(value = "/update/{id}")
+	public ModelAndView updateview(@PathVariable int id,Model m) {
+		Employeedetails theemp=emp.findById(id);
+		m.addAttribute("theemp",theemp);
+		return new ModelAndView("updateview");
+	}
+	@PostMapping(value = "/updateemployee/{id}")
+	public ModelAndView update(Employeedetails theemp,Model model,@PathVariable int id) {
+		theemp.setID(id);
+		emp.save(theemp);
+		
+		List<Employeedetails> bt = (List<Employeedetails>) emp.findAll();
+		model.addAttribute("Employeedetails", bt);
+		
+		return new ModelAndView("viewemp");
 	}
 	/**
 	 * This method handles the request for navigation bar

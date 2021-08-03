@@ -24,7 +24,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 	 */
 	@Override
 	public Employeedetails save(Employeedetails theemp) {
-		
 		return emp.save(theemp);
 	}
 	/**
@@ -41,6 +40,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 		return emp.findAll();
 	}
+	@Override
+	public Employeedetails findById(int id) {
+		return emp.findById(id);
+	}
+	
 
 	
 	

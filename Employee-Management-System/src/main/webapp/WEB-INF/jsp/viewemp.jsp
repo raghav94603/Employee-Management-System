@@ -178,7 +178,7 @@ response.setDateHeader("Expire", 0);
  <td><c:out value="${bt.getDoJ()}"></c:out></td>
  <td><c:out value="${bt.getEmployeeNumber()}"></c:out></td>
  <td><c:out value="${bt.getUsername()}"></c:out></td>
- <td><button onclick="window.location.href='edit.jsp';">
+ <td><button onclick="window.location.href='/api/update/${bt.getID()}';">
       Edit
     </button></td>
  <td><button onclick="window.location.href='/api/delete/${bt.getID()}' ;">
