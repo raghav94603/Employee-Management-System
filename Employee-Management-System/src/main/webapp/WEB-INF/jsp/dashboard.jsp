@@ -251,7 +251,8 @@ header .logo {
 			<!--<div class="panel-head">-->
 			<a href="/api/addview" class="btn btn-success">Add New Employee</a><br><br>
      		<a href="/api/adminview" class="btn btn-success">View Employees</a><br><br>
-     		<a href="<%=request.getContextPath()%>/new" class="btn btn-success">Logout</a><br>
+     		<a href="/api/navabout" class="btn btn-success">About</a><br><br>
+     		<a href="/api/log" class="btn btn-success">Logout</a><br>
 	        	
 		</div>	
         </body>
