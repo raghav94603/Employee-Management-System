@@ -52,4 +52,16 @@ public class CRUDController {
 		return new ModelAndView("addview");
 	}
 
+	@RequestMapping(value = "/navdash")
+	public ModelAndView navview() {
+		return new ModelAndView("dashboard");
+	}
+	@RequestMapping(value = "/navabout")
+	public ModelAndView aboutview() {
+		return new ModelAndView("about");
+	}
+	@RequestMapping(value = "/log")
+	public ModelAndView logOut() {
+		return new ModelAndView("loginPage");
+	}
 }

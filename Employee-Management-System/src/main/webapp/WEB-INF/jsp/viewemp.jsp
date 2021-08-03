@@ -12,7 +12,7 @@
 body{
     font-family: Helvetica;
     -webkit-font-smoothing: antialiased;
-    background: rgba( 71, 147, 227, 1);
+    background: #302F2F;
 }
 h2{
     text-align: center;
@@ -138,6 +138,15 @@ h2{
 <title>Insert title here</title>
 </head>
 <body>
+<%
+response.setHeader("Cache-control", "no-cache");
+
+response.setHeader("Cache-control", "no-store"); 
+response.setHeader("Pragma", "no-cache");
+
+response.setDateHeader("Expire", 0);
+%>
+<jsp:include page="header.jsp"></jsp:include>
 <h2>Employee Details</h2>
 <div class="table-wrapper">
     <table class="fl-table">
