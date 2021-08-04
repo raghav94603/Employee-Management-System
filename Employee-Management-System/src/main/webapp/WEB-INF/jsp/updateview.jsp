@@ -7,11 +7,9 @@ body {
 	text-align: center;
 	font-family: 'Lato', sans-serif;
 	color: White;
-	padding: 20px 25px;
 	border-radius: 5px;
 	background-color: #302F2F;
-	padding: 20px;
-	background-color: #302F2F;
+	padding: 0px;
 }
 
 .button {
@@ -29,6 +27,14 @@ body {
 
 h1 {
 	background-color: #e67e22;
+	margin-bottom: -200px;
+}
+
+table.center {
+	margin: auto;
+	width: 30%;
+	border-collapse: collapse;
+	border: 2px;
 }
 </style>
 <head>
@@ -38,41 +44,103 @@ h1 {
 <h1>Update Employee Details</h1>
 <body>
 
+
 	<div class="container">
 		<form method="post" action="/api/updateemployee/${theemp.getID() }">
-			<label for="usrname"><b>User Name</b></label> <input type="text"
-				id="username" name="username" value="${theemp.getUsername()}"
-				readonly required><br>
-			<br> <label for="psw"><b>Password</b></label><input
-				type="password" placeholder="Enter your password" id="psw"
-				value="${theemp.getPassword()}" name="password"
-				pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-				title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-				required> <br> <br> <label for="Dob"><b>Date
-					of Birth</b></label> <input type="text" id="Dob" name="Dob"
-				value="${theemp.getDob()}" required> <br> <br> <label
-				for="DoJ"><b>Date of Joining</b></label> <input type="text"
-				value="${theemp.getDoJ()}" id="DoJ" name="DoJ"> <br> <br>
-			<label for="employeeNumber"><b>Employee Number</b></label> <input
-				type="text" value="${theemp.getEmployeeNumber()}"
-				id="employeeNumber" name="employeeNumber"> <br> <br>
-			<label for="firstName"><b>First Name</b></label> <input type="text"
-				value="${theemp.getFirstName()}" id="firstName" name="firstName">
-			<br> <br> <label for="lastName"><b>Last Name</b></label> <input
-				type="text" value="${theemp.getLastName()}" id="lastName"
-				name="lastName"> <br> <br> <label for="gender"><b>Gender</b></label>
-			<input type="radio" id="gender" name="gender" value="Male">
-			Male <input type="radio" id="gender" name="gender" value="Female">
-			Female <input type="radio" id="gender" name="gender" value="Others">
-			Others <br> <br> <label for="role"><b>Role</b></label> <input
-				type="text" value="${theemp.getRole()}" id="role" name="role">
-			<br> <br> <label for="img"><b>Image</b></label> <input
-				type="text" value="${theemp.getImg()}" id="img" name="img">
-			<br> <br> <input type="submit" value="Update"
-				class="button"> <input type="button" value="Back"
-				class="button" onclick="javascript:history.go(-1)">
-
-
+			<table BORDER="1" class="center">
+			<tr>
+			<td>
+				<label for="usrname"><b>User Name</b></label></td>
+				<td>
+				<input type="text" id="username" name="username"
+					value="${theemp.getUsername()}" readonly required></td></tr>
+				<br>
+				<br>
+				<tr>
+				<td>
+				<label for="psw"><b>Password</b></label></td>
+				<td>
+				<input type="password" placeholder="Enter your password" id="psw"
+					value="${theemp.getPassword()}" name="password"
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+					required></td></tr>
+				<br>
+				<br>
+				<tr>
+				<td>
+				
+				<label for="Dob"><b>Date of Birth</b></label></td>
+				<td>
+				<input type="text" id="Dob" name="Dob" value="${theemp.getDob()}"
+					required></td></tr>
+				<br>
+				<br>
+				<tr>
+				<td>
+				<label for="DoJ"><b>Date of Joining</b></label></td>
+				<td>
+				<input type="text" value="${theemp.getDoJ()}" id="DoJ" name="DoJ"></td></tr>
+				<br>
+				<br>
+				<tr>
+				<td>
+				<label for="employeeNumber"><b>Employee Number</b></label></td>
+				<td>
+				<input type="text" value="${theemp.getEmployeeNumber()}"
+					id="employeeNumber" name="employeeNumber"></td></tr>
+				<br>
+				<br>
+				<tr>
+				<td>
+				<label for="firstName"><b>First Name</b></label></td>
+				<td>
+				<input type="text" value="${theemp.getFirstName()}" id="firstName"
+					name="firstName"></td></tr>
+					
+				<br>
+				<br>
+				<tr>
+					<td>
+				<label for="lastName"><b>Last Name</b></label></td>
+				<td>
+				<input type="text" value="${theemp.getLastName()}" id="lastName"
+					name="lastName"></td></tr>
+			
+				<br>
+				<br>
+				<tr>
+				<td>
+				<label for="gender"><b>Gender</b></label></td>
+				<td>
+				<input type="radio" id="gender" name="gender" value="Male">
+				Male
+				<input type="radio" id="gender" name="gender" value="Female">
+				Female
+				<input type="radio" id="gender" name="gender" value="Others">
+				Others</td></tr>
+				
+				<br>
+				<br>
+				<tr>
+				<td>
+				<label for="role"><b>Role</b></label></td>
+				<td>
+				<input type="text" value="${theemp.getRole()}" id="role" name="role"></td></tr>
+				<br>
+				<br>
+				<tr>
+				<td>
+				<label for="img"><b>Image</b></label></td>
+				<td>
+				<input type="text" value="${theemp.getImg()}" id="img" name="img">
+				</td></tr>
+				</table>
+				<br>
+				<br>
+				<input type="submit" value="Update" class="button">
+				<input type="button" value="Back" class="button"
+					onclick="javascript:history.go(-1)">
 		</form>
 	</div>
 
