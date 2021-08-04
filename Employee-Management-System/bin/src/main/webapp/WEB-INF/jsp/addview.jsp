@@ -16,7 +16,7 @@
           <br>
           <label for="psw">Password</label>
           <br>
-          <input type="password" placeholder="Enter your password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+          <input type="password" placeholder="Enter your password" id="psw" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
           <br>
           <label for="Dob">Date of Birth</label>
           <br>
