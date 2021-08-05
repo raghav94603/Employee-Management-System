@@ -34,7 +34,7 @@ table.center {
 	margin: auto;
 	width: 30%;
 	border-collapse: collapse;
-	border: 2px ;
+	border: 2px;
 }
 </style>
 <head>
