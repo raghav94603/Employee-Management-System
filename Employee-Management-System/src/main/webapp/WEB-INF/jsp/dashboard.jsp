@@ -1,259 +1,189 @@
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
- pageEncoding="UTF-8"%>
- 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="path/to/font-awesome/css/font-awesome.min.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
 <style>
-@charset "ISO-8859-1";
-@import 'https://fonts.googleapis.com/css?family=Lato:300,400';
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-body, html {
-	font-family: 'Lato', sans-serif;
-	font-size: 20px;
-	height: 100%;
-	position: relative;
+@
+use postcss-preset-env {
+	stage: 0;
 }
 
-.clearfix:after {
-	content: "";
-	display: block;
-	clear: both;
+/* helpers/accessibility.css */
+.invisible {
+	left: -999px;
+	top: -999px;
+	overflow: hidden;
+	position: absolute;
 }
 
-a {
-	color: black;
-	text-decoration: none; 
-  font-size:1rem;
-  padding: 20px;
+/* helpers/align.css */
+.align {
+	margin-top: -50px;
+	display: grid;
+	place-items: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 50px;
 }
 
-.nav-btn {
-	width: 100%;
-	height: 35px;
-	padding-top: 4px;
-	color: #D5D3D3;
-	background-color: #212121;			 ;
-	text-align: center;
-	cursor: pointer;
+body {
+	margin: 0px;
+	min-block-size: 107vh;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+/* modules/icon.css */
+.icons {
 	display: none;
 }
-.nav-btn:active {
-	background-color: #090909; 
-}
-h1{
-  background-color: #e67e22; 
-  font-size: 2rem;
-}
-header {
-	height: 50px;
-	width: 100%;
-	background-color: #274C6B;
-	display: none;
-}
-header .logo {
-	opacity: 0.9;
-	font-size: 120%;
-	padding-top: 9px;
-	padding-left: 8px;
-}
 
-.container {
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
-
-.sidebar {
-	width: 250px;
-	background-color: #302F2F;
-	position: fixed;
-	top: 0px;
-	left: 0;
-	bottom: 0;
-	box-shadow: 1px 0px 10px #777;
-}
-
-.sidebar nav > a {
-	font-size: 150%;
+.icon {
+	block-size: 1em;
 	display: inline-block;
-	padding: 30px 0px;
-	padding-left: 30px;
-	opacity: 0.7;
-	transition: all 0.2s;
+	inline-size: 2em;
+	vertical-align: middle;
 }
-.sidebar nav > a:hover {
+
+.icon--2x {
+	text-align: center;
+	font-size: 6rem;
+	margin-left: 1rem;
+	font-size: 6rem;
+}
+
+/* modules/image.css */
+svg {
+	max-inline-size: 100%;
+}
+
+/* modules/navigation.css */
+:root { -
+	-navigation-border-radius: 0.25em; -
+	-navigation-anchor-padding: 1.5em;
+}
+
+.navigation {
+	border-radius: 2rem;
+	box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.3);
+	background-color: #2EE59D;
+	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+	color: #fff;
+}
+
+.navigation ul {
+	list-style: none;
+	margin: 5px;
+	padding: 10px;
+}
+
+.navigation a {
+	display: block;
+	padding: var(- -navigation-anchor-padding);
+	position: relative;
+	text-decoration: none;
+	padding: var(- -navigation-anchor-padding);
+}
+
+.navigation a:focus::after, .navigation a:hover::after {
 	opacity: 1;
 }
 
-.sidebar nav a span {
-	font-weight: 300;
+.navigation a::after {
+	block-size: 100%;
+	box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.3);
+	content: '';
+	inline-size: 70%;
+	left: 23px;
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	transition: opacity 0.3s;
 }
 
-.sidebar nav ul {
-	list-style: none;
+.navigation--inline ul {
+	display: flex;
 }
 
-.sidebar nav ul li {
-	font-size: 70%;
-	padding: 19px 0;	
-	padding-left: 20px;
-	border-bottom: 0.5px solid #111;
+svg {
+	transform: translateX(30px);
 }
 
-.sidebar nav ul li:nth-child(1):hover {
-	background-color: #e67e22;
-}
-
-.sidebar nav ul li:nth-child(1).active {
-	background-color: #e67e22;
-}
-
-.sidebar nav ul li:nth-child(2):hover {
-	background-color: #2980b9;
-}
-
-.sidebar nav ul li:nth-child(2).active {
-	background-color: #2980b9;
-}
-
-.sidebar nav ul li:nth-child(3):hover {
-	background-color: #16a085;
-}
-
-.sidebar nav ul li:nth-child(3).active {
-	background-color: #16a085;
-}
-
-.sidebar nav ul li:nth-child(4):hover {
-	background-color: #8e44ad;
-}
-
-.sidebar nav ul li:nth-child(4).active {
-	background-color: #8e44ad;
-}
-
-.sidebar nav ul li:nth-child(5):hover {
-	background-color: #f1c40f;
-}
-
-.sidebar nav ul li:nth-child(5).active {
-	background-color: #f1c40f;
-}
-
-
-.sidebar nav ul li a {
-	color: #D7D5D5;
-}
-
-.sidebar nav ul li:hover a{
-	color: #fff;
-}
-
-.main-content {
-	background-color: #fafafa;
-	width: calc(100% - 250px);
-	height: 100%;
-	margin-left: 250px;
-	padding: 20px 30px;
-}
-.main-content .panel-wrapper {
-	margin: 20px 0;
-	box-shadow: 0px 1px 5px #777;
-}
-
-.main-content .panel-wrapper .panel-head {
-	background-color: #00A5F2;
-	color: #fff;
-	padding: 10px 10px;
-	border: 1px solid #00A5F2;
-}
-.main-content .panel-wrapper .panel-body {
-	padding: 20px 10px;
-	font-size: 80%;
-}
-
-@media only screen and (max-width: 420px){
-	header {
-		display: block;
-	}
-	.nav-btn {
-		display: block;
-	}
-	.sidebar {
-		position: relative;
-		height: 378px;
-		width: 100%;
-		display: none;
-		margin-bottom: 40px;
-		z-index: 1000;
-	}
-	.main-content {
-		width: 100%;
-		margin-left: 0;
-		z-index: -1;
-		position: relative;
-	}
-}
-
-@media only screen and (max-width: 768px){
-	header {
-		display: block;
-	}
-	.nav-btn {
-		display: block;
-	}
-	.sidebar {
-		position: relative;
-		height: 378px;
-		width: 100%;
-		display: none;
-		margin-bottom: 40px;
-		z-index: 1000;
-	}
-	.main-content {
-		width: 100%;
-		margin-left: 0;
-		z-index: -1;
-		position: relative;
-	}
+div {
+	color: White;
 }
 </style>
-        <head>
-            <title>Dashboard</title>
-            <link rel="stylesheet" href="dashboard.css">
-         </head>
+</head>
+<body
+	style="background-image: url('https://images.unsplash.com/photo-1549637642-90187f64f420?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;amp;ixlib=rb-1.2.1&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=753&amp;amp;q=80'); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover; backdrop-filter: blur(10px); height: 100%; width: 100%;">
+<body class="align">
 
-        <body>
+	<div>
+		<h1>Dashboard</h1>
+	</div>
+	<nav class="navigation navigation--inline">
+		<ul>
+			<li><a href="/api/addview"> <svg class="icon icon--2x">
+            <use xlink:href="#icon-add" />
+          </svg> <span class="invisible">Add Employee</span>
+			</a></li>
+			<li><a href="/api/adminview"> <svg class="icon icon--2x">
+            <use xlink:href="#icon-search" />
+          </svg> <span class="invisible">Search</span>
+			</a></li>
+			<li><a href="/api/navabout"> <svg class="icon icon--2x">
+            <use xlink:href="#icon-about" />
+          </svg> <span class="invisible">About us</span>
+			</a></li>
+			<li><a href="/api/log"> <svg class="icon icon--2x">
+            <use xlink:href="#icon-logout" />
+          </svg> <span class="invisible">Sign outs</span>
+			</a></li>
+		</ul>
+	</nav>
 
-            <header>
-		<div class="logo">Employee Management</div>
-	</header>
-	<div class="nav-btn">Menu</div>
-	<div class="container">
-		
-		<div class="sidebar">
-			<nav>
-				<a>Employee Management</a>
-				<ul>
-					<li class="active"><a href="#">Dashboard</a></li>
-				</ul>
-			</nav>
-		</div>
 
-		<div class="main-content">
-			<h1>Employee Dashboard</h1><br>
-			<p href="#">Users</p><br>
-			<!--<div class="panel-wrapper">-->
-			<!--<div class="panel-head">-->
-			<a href="/api/addview" class="btn btn-success">Add New Employee</a><br><br>
-     		<a href="/api/adminview" class="btn btn-success">View Employees</a><br><br>
-     		<a href="/api/navabout" class="btn btn-success">About</a><br><br>
-     		<a href="/api/log" class="btn btn-success">Logout</a><br>
-	        	
-		</div>	
-        </body>
-        </html>
+	<svg xmlns="http://www.w3.org/2000/svg" class="icons">
+    <symbol id="icon-logout" width="100" height="100"
+			viewBox="0 0 24 24" fill="none" stroke="#d1cccc" stroke-width="1.5"
+			stroke-linecap="round" stroke-linejoin="round">
+		<path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+		<line x1="12" y1="2" x2="12" y2="12"></line>  
+    </symbol>
+    </a>
+    <symbol id="icon-about" width="100" height="100" viewBox="0 0 24 24"
+			fill="none" stroke="#d1cccc" stroke-width="1.5"
+			stroke-linecap="square" stroke-linejoin="round">
+		<circle cx="12" cy="12" r="10"></circle>
+		<line x1="12" y1="16" x2="12" y2="12"></line>
+		<line x1="12" y1="8" x2="12.01" y2="8"></line>
+      
+    </symbol>
+    <symbol id="icon-add" width="100" height="100" viewBox="0 0 24 24"
+			fill="none" stroke="#d1cccc" stroke-width="1.5"
+			stroke-linecap="round" stroke-linejoin="round">
+		<path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+		<circle cx="8.5" cy="7" r="4"></circle>
+		<line x1="20" y1="8" x2="20" y2="14"></line>
+		<line x1="23" y1="11" x2="17" y2="11"></line>
+      
+    </symbol>
+    <symbol id="icon-search" width="100" height="100"
+			viewBox="0 0 24 24" fill="none" stroke="#d1cccc" stroke-width="1.5"
+			stroke-linecap="round" stroke-linejoin="round">
+		<circle cx="11" cy="11" r="8"></circle>
+		<line x1="21" y1="21" x2="16.65" y2="16.65"></line> >
+     
+    </symbol>
+   
+    
+  </svg>
+
+</body>
+</body>
+</html>
