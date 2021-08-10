@@ -92,6 +92,7 @@ svg {
 
 .navigation a:focus::after, .navigation a:hover::after {
 	opacity: 1;
+	visibility: visible;
 }
 
 .navigation a::after {
@@ -117,6 +118,32 @@ svg {
 div {
 	color: White;
 }
+/* .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+} */
 </style>
 </head>
 <body
@@ -128,7 +155,7 @@ div {
 	</div>
 	<nav class="navigation navigation--inline">
 		<ul>
-			<li><a href="/api/addview"> <svg class="icon icon--2x">
+			<li ><a href="/api/addview"> <svg class="icon icon--2x">
             <use xlink:href="#icon-add" />
           </svg> <span class="invisible">Add Employee</span>
 			</a></li>
@@ -151,7 +178,7 @@ div {
 	<svg xmlns="http://www.w3.org/2000/svg" class="icons">
     <symbol id="icon-logout" width="100" height="100"
 			viewBox="0 0 24 24" fill="none" stroke="#d1cccc" stroke-width="1.5"
-			stroke-linecap="round" stroke-linejoin="round">
+			stroke-linecap="round" stroke-linejoin="round" <span class="tooltiptext">Tooltip text</span>>
 		<path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
 		<line x1="12" y1="2" x2="12" y2="12"></line>  
     </symbol>
@@ -176,8 +203,10 @@ div {
     <symbol id="icon-search" width="100" height="100"
 			viewBox="0 0 24 24" fill="none" stroke="#d1cccc" stroke-width="1.5"
 			stroke-linecap="round" stroke-linejoin="round">
-		<circle cx="11" cy="11" r="8"></circle>
-		<line x1="21" y1="21" x2="16.65" y2="16.65"></line> >
+		<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+		<circle cx="9" cy="7" r="4"></circle>
+		<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+		<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
      
     </symbol>
    
