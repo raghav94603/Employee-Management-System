@@ -7,57 +7,93 @@
   <title>Attendance</title>
 </head>
 <body>
-  <h2>Project Name - ${e.getprojectname()}</h2>
- <h2>Employee Name- ${e.getname()}</h2>
-<h2>week- ${e.getdate()}</h2>
-<form method="post">
+  <h1 align="center" style="color: orange">Attendance</h1>
+<form method="post" action="/api/att">
 
 <table class="table table-striped table-dark">
         <thead>
         <tr>
+            <th>Task No.</th>
             <th>Activity</th>
             <th>Phase</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednessday</th>
-            <th>thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-            <th>Sunday</th>
+            <th>Date</th>
+            <th>Day</th>
+            <th>Hours</th>
+            <th>Location</th>
         </tr>
         </thead>
         <tbody>
 
 <tr>
+<td>
+ <input type="number" name="Task No.">
+</td>
  <td>
-<select id="Activity">
+<select id="Activity" name="Activity">
   <option value="Development">Development</option>
   <option value="out of office">out of office</option>
-  <option value="Project Management">Project Managemet</option>
+  <option value="Project Management">Project Management</option>
   <option value="Client Meeting">Client Meeting</option>
 </select></td>
-<td><select id="Phase">
+<td><select id="Phase" name="Phase">
   <option value="Planning">Planning</option>
   <option value="Designing">Designing</option>
   <option value="Execution">Execution</option>
   <option value="Testing">Testing</option>
   <option value="Production">Production</option>
 </select></td>
-<td><input type="number" name="Monday"></td>
-<td><input type="number" name="tuesday"></td>
-<td><input type="number" name="Wednesday"></td>
-<td><input type="number" name="thursday"></td>
-<td><input type="number" name="Friday"></td>
-<td><input type="number" name="Saturday"></td>
-<td><input type="number" name="Sunday"></td>
+<td>
+  <input type="date" name="markdate">
+  
+</td>
+<td><select id="Day" name="Day">
+  <option value="Monday">Monday</option>
+  <option value="Tuesday">Tuesday</option>
+  <option value="Wednesday">Wednesday</option>
+  <option value="Thursday">Thursday</option>
+  <option value="Friday">Friday</option>
+  <option value="Saturday">Saturday</option>
+  <option value="Sunday">Sunday</option>
+</select></td>
+
+<td><select id="Hours" name="Hours">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+</select></td>
+
+<td><select id="Location" name="Location">
+  <option value="Base Location">Base Location</option>
+  <option value="Client Location">Client Location</option>
+  <option value="Work from Home">Work from Home</option>
+  
+</select></td>
 </tr>
 </table>
+<div align="center">
 <input type="submit"name="submit">
+</div>
 </form>
-<a href="Dashboard.jsp" class="text-warning">Back to Dashboard</a>
+
 
 </body>
 </html>
+
+
+
+
 
 
 
