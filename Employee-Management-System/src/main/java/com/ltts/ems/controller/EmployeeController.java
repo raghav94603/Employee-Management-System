@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ltts.ems.model.Attendance_details;
 import com.ltts.ems.model.Employeedetails;
+import com.ltts.ems.service.AttendanceService;
 import com.ltts.ems.service.EmployeeService;
 
 @RestController
@@ -19,6 +21,9 @@ public class EmployeeController {
 
 	@Autowired
 	EmployeeService emp;
+	
+	@Autowired
+	AttendanceService apr;
 
 	/**
 	 * This method handles the request for adding employee details
@@ -120,4 +125,14 @@ public class EmployeeController {
 	public ModelAndView logOut() {
 		return new ModelAndView("loginPage");
 	}
+	
+	@RequestMapping(value = "/mn")
+	public ModelAndView mnb() {
+		return new ModelAndView("Attendance");
+	}
+	@PostMapping("/att")
+	public ModelAndView addAttendance(Attendance_details attd, Model model) {
+		apr.save(attd);
+		return new ModelAndView("Attendance");
+}
 }
