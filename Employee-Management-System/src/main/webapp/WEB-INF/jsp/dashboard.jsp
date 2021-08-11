@@ -118,32 +118,6 @@ svg {
 div {
 	color: White;
 }
-/* .tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -60px;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-} */
 </style>
 </head>
 <body
@@ -155,13 +129,17 @@ div {
 	</div>
 	<nav class="navigation navigation--inline">
 		<ul>
-			<li ><a href="/api/addview"> <svg class="icon icon--2x">
+			<li><a href="/api/addview"> <svg class="icon icon--2x">
             <use xlink:href="#icon-add" />
           </svg> <span class="invisible">Add Employee</span>
 			</a></li>
 			<li><a href="/api/adminview"> <svg class="icon icon--2x">
             <use xlink:href="#icon-search" />
           </svg> <span class="invisible">Search</span>
+			</a></li>
+			<li><a href="/api/mn"> <svg class="icon icon--2x">
+            <use xlink:href="#icon-attendance" />
+          </svg> <span class="invisible">Attendance Status</span>
 			</a></li>
 			<li><a href="/api/navabout"> <svg class="icon icon--2x">
             <use xlink:href="#icon-about" />
@@ -171,6 +149,7 @@ div {
             <use xlink:href="#icon-logout" />
           </svg> <span class="invisible">Sign outs</span>
 			</a></li>
+
 		</ul>
 	</nav>
 
@@ -178,7 +157,8 @@ div {
 	<svg xmlns="http://www.w3.org/2000/svg" class="icons">
     <symbol id="icon-logout" width="100" height="100"
 			viewBox="0 0 24 24" fill="none" stroke="#d1cccc" stroke-width="1.5"
-			stroke-linecap="round" stroke-linejoin="round" <span class="tooltiptext">Tooltip text</span>>
+			stroke-linecap="round" stroke-linejoin="round"
+			<span class="tooltiptext">Tooltip text</span>>
 		<path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
 		<line x1="12" y1="2" x2="12" y2="12"></line>  
     </symbol>
@@ -207,6 +187,13 @@ div {
 		<circle cx="9" cy="7" r="4"></circle>
 		<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
 		<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+     
+    </symbol>
+    <symbol id="icon-attendance" width="100" height="100"
+			viewBox="0 0 24 24" fill="none" stroke="#d1cccc" stroke-width="1.5"
+			stroke-linecap="round" stroke-linejoin="round">
+		<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+		<polyline points="22 4 12 14.01 9 11.01"></polyline>
      
     </symbol>
    
