@@ -5,17 +5,23 @@
 <style>
 body {
 	text-align: center;
-	font-family: 'Lato', sans-serif;
-	color: White;
+	color: Black;
 	border-radius: 5px;
-	background-color: #302F2F;
-	padding: 0px;
+	background-color: #2F4F4F;
+	font-size: large;
+	font-family: 'Ubuntu', sans-serif;
+	height: 600px;
+	width: 900px;
+	margin: auto;
+	border: 10px solid black;
+			text-shadow: 2px 2px 5px white;
+	
 }
 
 .button {
 	background-color: #e67e22;
 	border: 2px solid black;
-	color: white;
+	background-color: #2EE59D;
 	padding: 10px 25px;
 	text-align: center;
 	text-decoration: none;
@@ -23,23 +29,51 @@ body {
 	font-size: 16px;
 	margin: 4px 2px;
 	cursor: pointer;
+	border-radius: 12px;
+	transition-duration: 0.4s;
+			text-shadow: 2px 2px 5px white;
+	
+}
+
+.button:hover {
+	background-color: Black;
+	color: white;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
 }
 
 h1 {
-	background-color: #e67e22;
-	margin-bottom: -200px;
+	color: White;
+	margin-bottom: -300px;
+	top-padding: 10px;
+	font-size: 55px;
+		text-shadow: 2px 2px 5px black;
+	
 }
 
 table.center {
 	margin: auto;
-	width: 30%;
-	border-collapse: collapse;
-	border: 2px;
+	width: 70%;
+}
+
+tr, td {
+	padding: 8px;
+	text-align: center;
+}
+
+tr:hover {
+	background-color: #f5f5f5;
+}
+
+.container {
+	background-color: grey;
 }
 </style>
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Employee Details</title>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu"
+	rel="stylesheet">
 </head>
 <h1>Update Employee Details</h1>
 <body>
@@ -47,9 +81,9 @@ table.center {
 
 	<div class="container">
 		<form method="post" action="/api/updateemployee/${theemp.getID() }">
-			<table BORDER="1" class="center">
+			<table BORDER="0" class="center">
 				<tr>
-					<td><label for="usrname"><b>User Name</b></label></td>
+					<td><label for="usrname"><b>Username</b></label></td>
 					<td><input type="text" id="username" name="username"
 						value="${theemp.getUsername()}" readonly required></td>
 				</tr>
