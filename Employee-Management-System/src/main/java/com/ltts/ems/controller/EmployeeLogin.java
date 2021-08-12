@@ -25,6 +25,7 @@ public class EmployeeLogin {
 	}
 
 	/**
+	 * This method redirects to the Dashboard after valid credentials else to error page
 	 * @param request
 	 * @return
 	 */
