@@ -13,6 +13,9 @@ body {
 	height: 600px;
 	width: 900px;
 	margin: auto;
+	border: 10px solid black;
+		text-shadow: 2px 2px 5px white;
+	
 }
 
 .button {
@@ -26,12 +29,25 @@ body {
 	font-size: 16px;
 	margin: 4px 2px;
 	cursor: pointer;
+	border-radius: 12px;
+	transition-duration: 0.4s;
+		text-shadow: 2px 2px 5px white;
+	
+}
+
+.button:hover {
+	background-color: Black;
+	color: white;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
 }
 
 h1 {
 	color: White;
 	margin-bottom: -300px;
 	top-padding: 10px;
+	font-size: 55px;
+	text-shadow: 2px 2px 5px black;
 }
 
 table.center {
@@ -66,7 +82,7 @@ tr:hover {
 		<form method="post" action="/api/add">
 			<table BORDER="0" class="center">
 				<tr>
-					<td><label for="usrname"><b>User Name</b></label></td>
+					<td ><label for="usrname"><b>Username</b></label></td>
 					<td><input type="text" id="username" name="username"
 						placeholder="Enter your username" required></td>
 				</tr>
@@ -142,10 +158,9 @@ tr:hover {
 						id="img" name="img"></td>
 				</tr>
 			</table>
-			<br>
-			<br> <input type="submit" value="Submit" class="button">
-			<input type="button" value="Back" class="button"
-				onclick="javascript:history.go(-1)">
+			<br> <br> <input type="submit" value="Submit"
+				class="button"> <input type="button" value="Back"
+				class="button" onclick="javascript:history.go(-1)">
 
 
 		</form>
