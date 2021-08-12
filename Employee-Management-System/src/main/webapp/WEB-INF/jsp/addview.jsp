@@ -5,17 +5,20 @@
 <style>
 body {
 	text-align: center;
-	font-family: 'Lato', sans-serif;
-	color: White;
+	color: Black;
 	border-radius: 5px;
-	background-color: #302F2F;
-	padding: 0px;
+	background-color: #2F4F4F;
+	font-size: large;
+	font-family: 'Ubuntu', sans-serif;
+	height: 600px;
+	width: 900px;
+	margin: auto;
 }
 
 .button {
 	background-color: #e67e22;
 	border: 2px solid black;
-	color: white;
+	background-color: #2EE59D;
 	padding: 10px 25px;
 	text-align: center;
 	text-decoration: none;
@@ -26,28 +29,42 @@ body {
 }
 
 h1 {
-	background-color: #e67e22;
-	margin-bottom: -200px;
+	color: White;
+	margin-bottom: -300px;
+	top-padding: 10px;
 }
 
 table.center {
 	margin: auto;
-	width: 30%;
-	border-collapse: collapse;
-	border: 2px;
+	width: 70%;
+}
+
+tr, td {
+	padding: 8px;
+	text-align: center;
+}
+
+tr:hover {
+	background-color: #f5f5f5;
+}
+
+.container {
+	background-color: grey;
 }
 </style>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu"
+	rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Add Employee Details</title>
 </head>
-<h1>Add Employee Details</h1>
 
 <body>
+	<h1>Add Employee Details</h1>
 
 	<div class="container">
 		<form method="post" action="/api/add">
-			<table BORDER="1" class="center">
+			<table BORDER="0" class="center">
 				<tr>
 					<td><label for="usrname"><b>User Name</b></label></td>
 					<td><input type="text" id="username" name="username"
@@ -125,9 +142,10 @@ table.center {
 						id="img" name="img"></td>
 				</tr>
 			</table>
-			<br> <br> <input type="submit" value="Submit"
-				class="button"> <input type="button" value="Back"
-				class="button" onclick="javascript:history.go(-1)">
+			<br>
+			<br> <input type="submit" value="Submit" class="button">
+			<input type="button" value="Back" class="button"
+				onclick="javascript:history.go(-1)">
 
 
 		</form>
