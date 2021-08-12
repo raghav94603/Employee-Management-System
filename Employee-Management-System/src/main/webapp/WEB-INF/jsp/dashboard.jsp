@@ -8,7 +8,7 @@
 <link rel="stylesheet"
 	href="path/to/font-awesome/css/font-awesome.min.css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Dashboard</title>
 <style>
 @
 use postcss-preset-env {
