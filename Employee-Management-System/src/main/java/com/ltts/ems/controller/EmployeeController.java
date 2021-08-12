@@ -3,6 +3,7 @@ package com.ltts.ems.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,12 +17,14 @@ import com.ltts.ems.service.AttendanceService;
 import com.ltts.ems.service.EmployeeService;
 
 @RestController
+@Scope("session")
 @RequestMapping("/api")
 public class EmployeeController {
 
 	@Autowired
 	EmployeeService emp;
-	
+	@Autowired
+	EmployeeLogin elogin;
 	@Autowired
 	AttendanceService apr;
 
@@ -127,7 +130,9 @@ public class EmployeeController {
 	}
 	
 	@RequestMapping(value = "/mn")
-	public ModelAndView mnb() {
+	public ModelAndView mnb(Model model) {
+		Employeedetails theemp=emp.findByUsernameAndPassword(elogin.username, elogin.password);
+		model.addAttribute("theemp",theemp);
 		return new ModelAndView("Attendance");
 	}
 	@PostMapping("/att")

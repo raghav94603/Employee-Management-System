@@ -7,6 +7,10 @@
   <title>Attendance</title>
 </head>
 <body>
+<h3>UserName:- ${theemp.getUsername()}</h3>
+<h3>Name of Employee:- ${theemp.getFirstName()} ${theemp.getLastName()}</h3>
+
+
   <h1 align="center" style="color: orange">Attendance</h1>
 <form method="post" action="/api/att">
 

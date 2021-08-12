@@ -3,6 +3,7 @@ package com.ltts.ems.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,13 +13,17 @@ import com.ltts.ems.model.Employeedetails;
 import com.ltts.ems.service.EmployeeService;
 
 @RestController
+@Scope("session")
 public class EmployeeLogin {
 	@Autowired
 	EmployeeService emp;
+	String username;
+	String password;
 
 	/**
 	 * @return
 	 */
+
 	@RequestMapping("/")
 	public ModelAndView Login() {
 		return new ModelAndView("loginPage");
@@ -30,8 +35,8 @@ public class EmployeeLogin {
 	 */
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public ModelAndView LoginAuth(HttpServletRequest request) {
-		String username = request.getParameter("usrname");
-		String password = request.getParameter("psw");
+		username = request.getParameter("usrname");
+		password = request.getParameter("psw");
 		Employeedetails theEmployee = emp.findByUsernameAndPassword(username, password);
 		if (theEmployee == null) {
 
