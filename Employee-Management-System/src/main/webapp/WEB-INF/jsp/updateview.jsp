@@ -14,7 +14,6 @@ body {
 	width: 900px;
 	margin: auto;
 	border: 10px solid black;
-			text-shadow: 2px 2px 5px white;
 	
 }
 
@@ -31,7 +30,6 @@ body {
 	cursor: pointer;
 	border-radius: 12px;
 	transition-duration: 0.4s;
-			text-shadow: 2px 2px 5px white;
 	
 }
 
