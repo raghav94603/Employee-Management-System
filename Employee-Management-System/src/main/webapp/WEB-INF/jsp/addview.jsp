@@ -145,8 +145,13 @@ tr:hover {
 				<br>
 				<tr>
 					<td><label for="role"><b>Role</b></label></td>
-					<td><input type="text" placeholder="Enter your Role" id="role"
-						name="role"></td>
+						
+					<td><select id="role" name="Role">
+  <option value="Admin">Admin</option>
+  <option value="Employee">Employee</option>
+</select></td>	
+						
+						
 				</tr>
 				<br>
 				<br>
