@@ -39,13 +39,18 @@ public class EmployeeLogin {
 		username = request.getParameter("usrname");
 		password = request.getParameter("psw");
 		Employeedetails theEmployee = emp.findByUsernameAndPassword(username, password);
-		if (theEmployee == null) {
+if (theEmployee == null) {
+			
 
 			return new ModelAndView("Invalid_user");
-		} else {
+		} else if(theEmployee.getRole().equals("Admin")) {
 
 			return new ModelAndView("dashboard");
 
+		}
+		else
+		{
+			return new ModelAndView("empDashboard");
 		}
 
 	}
