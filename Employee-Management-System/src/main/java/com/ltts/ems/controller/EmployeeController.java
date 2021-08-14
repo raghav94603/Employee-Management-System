@@ -1,10 +1,12 @@
 package com.ltts.ems.controller;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -131,13 +133,57 @@ public class EmployeeController {
 	
 	@RequestMapping(value = "/mn")
 	public ModelAndView mnb(Model model) {
+Employeedetails theemp=emp.findByUsernameAndPassword(elogin.username, elogin.password);
+		
+		List<Attendance_details> all_emp_atten= (List<Attendance_details>)apr.findAll();
+		model.addAttribute("Attendancedetails", all_emp_atten);
+		model.addAttribute("Employeedetails", theemp);
+		return new ModelAndView("viewattendance");
+	}
+	@RequestMapping(value = "/status")
+	public ModelAndView status(Model model) {
 		Employeedetails theemp=emp.findByUsernameAndPassword(elogin.username, elogin.password);
-		model.addAttribute("theemp",theemp);
-		return new ModelAndView("Attendance");
+		
+		List<Attendance_details> emp_atten= (List<Attendance_details>)apr.findByID(theemp);
+		model.addAttribute("Attendancedetails", emp_atten);
+		model.addAttribute("Employeedetails", theemp);
+		return new ModelAndView("viewattendance");
+		
 	}
 	@PostMapping("/att")
 	public ModelAndView addAttendance(Attendance_details attd, Model model) {
 		apr.save(attd);
-		return new ModelAndView("Attendance");
+		Employeedetails theemp=emp.findByUsernameAndPassword(elogin.username, elogin.password);
+		List<Attendance_details> emp_atten= (List<Attendance_details>)apr.findByID(theemp);
+		model.addAttribute("Attendancedetails", emp_atten);
+		model.addAttribute("Employeedetails", theemp);
+		model.addAttribute("Attendancestatus", emp_atten);
+		return new ModelAndView("viewattendance");
 }
+	@GetMapping(value = "/accepted/{markdate}")
+	public ModelAndView accepted(Model model,@PathVariable Date markdate) {
+		
+		
+		Employeedetails theemp=emp.findByUsernameAndPassword(elogin.username, elogin.password);
+		int id =theemp.getID();
+		apr.setStatusforattendance("Accepted", id, markdate);
+		List<Attendance_details> emp_atten= (List<Attendance_details>)apr.findByID(theemp);
+		model.addAttribute("Attendancedetails", emp_atten);
+		model.addAttribute("Employeedetails", theemp);
+		model.addAttribute("Attendancestatus", emp_atten);
+		return new ModelAndView("viewattendance");
+	}
+	@GetMapping(value = "/rejected/{markdate}")
+	public ModelAndView rejected(Model model,@PathVariable Date markdate) {
+		
+		
+		Employeedetails theemp=emp.findByUsernameAndPassword(elogin.username, elogin.password);
+		int id =theemp.getID();
+		apr.setStatusforattendance("Rejected", id, markdate);
+		List<Attendance_details> emp_atten= (List<Attendance_details>)apr.findByID(theemp);
+		model.addAttribute("Attendancedetails", emp_atten);
+		model.addAttribute("Employeedetails", theemp);
+		model.addAttribute("Attendancestatus", emp_atten);
+		return new ModelAndView("viewattendance");
+	}
 }

@@ -14,7 +14,6 @@ import com.ltts.ems.model.Employeedetails;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employeedetails,Integer> {
 	
-	
 	public Employeedetails findById(int id);
 
 	  /**

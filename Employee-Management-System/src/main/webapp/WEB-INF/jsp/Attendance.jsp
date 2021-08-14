@@ -17,22 +17,23 @@
 <table class="table table-striped table-dark">
         <thead>
         <tr>
-            <th>Task No.</th>
+            <th>Employee ID</th>
             <th>Activity</th>
             <th>Phase</th>
             <th>Date</th>
             <th>Day</th>
             <th>Hours</th>
             <th>Location</th>
+           
         </tr>
         </thead>
         <tbody>
 
 <tr>
 <td>
- <input type="number" name="Task No.">
-</td>
- <td>
+ <input type="number" name="ID" value="${theemp.getID()}" readonly>
+ </td>
+<td>
 <select id="Activity" name="Activity">
   <option value="Development">Development</option>
   <option value="out of office">out of office</option>
@@ -84,6 +85,7 @@
   <option value="Work from Home">Work from Home</option>
   
 </select></td>
+
 </tr>
 </table>
 <div align="center">
