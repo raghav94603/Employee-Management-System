@@ -160,30 +160,30 @@ Employeedetails theemp=emp.findByUsernameAndPassword(elogin.username, elogin.pas
 		model.addAttribute("Attendancestatus", emp_atten);
 		return new ModelAndView("viewattendance");
 }
-	@GetMapping(value = "/accepted/{markdate}")
-	public ModelAndView accepted(Model model,@PathVariable Date markdate) {
+	@GetMapping(value = "/accepted/{id}/{markdate}")
+	public ModelAndView accepted(Model model,@PathVariable int id,@PathVariable Date markdate) {
 		
 		
 		Employeedetails theemp=emp.findByUsernameAndPassword(elogin.username, elogin.password);
-		int id =theemp.getID();
+	
 		apr.setStatusforattendance("Accepted", id, markdate);
-		List<Attendance_details> emp_atten= (List<Attendance_details>)apr.findByID(theemp);
+		System.out.print(id);
+		List<Attendance_details> emp_atten= (List<Attendance_details>)apr.findAll();
 		model.addAttribute("Attendancedetails", emp_atten);
 		model.addAttribute("Employeedetails", theemp);
-		model.addAttribute("Attendancestatus", emp_atten);
 		return new ModelAndView("viewattendance");
 	}
-	@GetMapping(value = "/rejected/{markdate}")
-	public ModelAndView rejected(Model model,@PathVariable Date markdate) {
+	@GetMapping(value = "/rejected/{id}/{markdate}")
+	public ModelAndView rejected(Model model,@PathVariable int id,@PathVariable Date markdate) {
 		
 		
 		Employeedetails theemp=emp.findByUsernameAndPassword(elogin.username, elogin.password);
-		int id =theemp.getID();
+	
+		System.out.print(id);
 		apr.setStatusforattendance("Rejected", id, markdate);
-		List<Attendance_details> emp_atten= (List<Attendance_details>)apr.findByID(theemp);
+		List<Attendance_details> emp_atten= (List<Attendance_details>)apr.findAll();
 		model.addAttribute("Attendancedetails", emp_atten);
 		model.addAttribute("Employeedetails", theemp);
-		model.addAttribute("Attendancestatus", emp_atten);
 		return new ModelAndView("viewattendance");
 	}
 	@RequestMapping(value = "/entry")

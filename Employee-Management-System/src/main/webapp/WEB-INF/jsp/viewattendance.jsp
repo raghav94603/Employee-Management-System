@@ -191,10 +191,10 @@ response.setDateHeader("Expire", 0);
          <%} %>
          
       <% if(atten.getStatus().equals("Pending")){if(theemp.getRole().equals("Admin")){%>
-      <td><button onclick="window.location.href='/api/accepted/${atten.getMarkdate()}';">
+      <td><button onclick="window.location.href='/api/accepted/${atten.getID().ID}/${atten.getMarkdate()}';">
       Accept
     </button></td>
-          <td><button onclick="window.location.href='/api/rejected/${atten.getMarkdate()}';">
+          <td><button onclick="window.location.href='/api/rejected/${atten.getID().ID}/${atten.getMarkdate()}';">
       Reject
     </button></td>
       <%}else{ %><td>Pending</td><td>Pending</td><%}} %>
