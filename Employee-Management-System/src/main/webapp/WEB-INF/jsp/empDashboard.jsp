@@ -130,7 +130,7 @@ div {
 	<nav class="navigation navigation--inline">
 		<ul>
 
-			<li><a href="/api/mn"> <svg class="icon icon--2x">
+			<li><a href="/api/entry"> <svg class="icon icon--2x">
             <use xlink:href="#icon-attendance" />
           </svg> <span class="invisible">Attendance Status</span>
 			</a></li>

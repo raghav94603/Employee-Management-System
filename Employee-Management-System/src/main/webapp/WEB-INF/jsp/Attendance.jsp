@@ -7,8 +7,8 @@
   <title>Attendance</title>
 </head>
 <body>
-<h3>UserName:- ${theemp.getUsername()}</h3>
-<h3>Name of Employee:- ${theemp.getFirstName()} ${theemp.getLastName()}</h3>
+<h3>UserName:- ${Employeedetails.getUsername()}</h3>
+<h3>Name of Employee:- ${Employeedetails.getFirstName()} ${theemp.getLastName()}</h3>
 
 
   <h1 align="center" style="color: orange">Attendance</h1>
@@ -31,7 +31,7 @@
 
 <tr>
 <td>
- <input type="number" name="ID" value="${theemp.getID()}" readonly>
+ <input type="number" name="ID" value="${Employeedetails.getID()}" readonly>
  </td>
 <td>
 <select id="Activity" name="Activity">

@@ -186,4 +186,10 @@ Employeedetails theemp=emp.findByUsernameAndPassword(elogin.username, elogin.pas
 		model.addAttribute("Attendancestatus", emp_atten);
 		return new ModelAndView("viewattendance");
 	}
+	@RequestMapping(value = "/entry")
+	public ModelAndView attendance_entry(Model model) {
+		Employeedetails theemp=emp.findByUsernameAndPassword(elogin.username, elogin.password);
+		model.addAttribute("Employeedetails", theemp);
+		return new ModelAndView("Attendance");
+	}
 }
