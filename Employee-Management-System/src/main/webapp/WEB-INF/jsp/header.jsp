@@ -6,6 +6,8 @@
 .topnav {
 	background-color: #2EE59D;
 	overflow: hidden;
+		font-family: 'Ubuntu', sans-serif;
+	
 }
 
 /* Style the links inside the navigation bar */
@@ -16,21 +18,29 @@
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 17px;
+		font-family: 'Ubuntu', sans-serif;
+	
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
 	background-color: White;
 	color: black;
+		font-family: 'Ubuntu', sans-serif;
+	
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
 	background-color: White;
 	color: Black;
+		font-family: 'Ubuntu', sans-serif;
+	
 }
 </style>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu"
+	rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
