@@ -16,7 +16,6 @@ body {
 
 .button {
 	background-color: #e67e22;
-	border: 2px solid black;
 	background-color: #2EE59D;
 	padding: 10px 25px;
 	text-align: center;
@@ -27,6 +26,8 @@ body {
 	cursor: pointer;
 	border-radius: 12px;
 	transition-duration: 0.4s;
+		font-family: 'Ubuntu', sans-serif;
+	
 }
 
 .button:hover {
