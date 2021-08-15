@@ -35,7 +35,7 @@ h2 {
 
 .fl-table {
 	border-radius: 5px;
-	font-size: 15px;
+	font-size: 20px;
 	font-weight: normal;
 	border: none;
 	border-collapse: collapse;
@@ -47,12 +47,12 @@ h2 {
 
 .fl-table td, .fl-table th {
 	text-align: center;
-	padding: 8px;
+	padding: 15px;
 }
 
 .fl-table td {
 	border-right: 1px solid #f8f8f8;
-	font-size: 12px;
+	font-size: 20px;
 }
 
 .fl-table thead th {
