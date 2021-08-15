@@ -12,17 +12,17 @@
     -moz-box-sizing: border-box;
 }
 body{
-    font-family: Helvetica;
+    	font-family: 'Ubuntu', sans-serif;
     -webkit-font-smoothing: antialiased;
     background: #302F2F;
 }
 h2{
     text-align: center;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 40px;
     color: white;
     padding: 30px 0;
+    	font-family: 'Ubuntu', sans-serif;
+    
 }
 
 /* Table Styles */
@@ -34,7 +34,7 @@ h2{
 
 .fl-table {
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 20px;
     font-weight: normal;
     border: none;
     border-collapse: collapse;
@@ -46,27 +46,27 @@ h2{
 
 .fl-table td, .fl-table th {
     text-align: center;
-    padding: 8px;
+    padding: 20px;
 }
 
 .fl-table td {
     border-right: 1px solid #f8f8f8;
-    font-size: 12px;
+    font-size: 20px;
 }
 
 .fl-table thead th {
     color: #000000;
-    background: #e67e22;
+    background: grey;
 }
 
 
 .fl-table thead th:nth-child(odd) {
     color: #000000;
-    background: #e67e22;
+    background: grey;
 }
 
 .fl-table tr:nth-child(even) {
-    background: #F8F8F8;
+    background: grey;
 }
 
 /* Responsive */
@@ -136,10 +136,13 @@ h2{
 }
 </style>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu"
+	rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body 	style="background-image: url('https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80'); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;');">
+>
 <%
 response.setHeader("Cache-control", "no-cache");
 
