@@ -27,6 +27,7 @@ body {
 	cursor: pointer;
 	border-radius: 12px;
 	transition-duration: 0.4s;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .button:hover {
