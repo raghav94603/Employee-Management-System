@@ -1,170 +1,199 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <style>
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
 body {
-	text-align: center;
-	color: White;
-	border-radius: 5px;
-	font-size: large;
+	font-family: Helvetica;
+	-webkit-font-smoothing: antialiased;
+	background: #302F2F;
 	font-family: 'Ubuntu', sans-serif;
-	height: 600px;
-	width: 900px;
-	margin: auto;
 }
 
-.button {
-	background-color: #e67e22;
-	border: 2px solid black;
-	background-color: #2EE59D;
-	padding: 10px 25px;
+h2 {
 	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
-	border-radius: 12px;
-	transition-duration: 0.4s;
-}
-
-.button:hover {
-	background-color: Black;
+	font-size: 45px;
+	font-family: 'Ubuntu', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 	color: white;
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
+	padding: 30px 0;
 }
 
-h1 {
-	color: white;
-	margin-bottom: -300px;
-	top-padding: 10px;
-	font-size: 55px;
+/* Table Styles */
+.table-wrapper {
+	margin: 10px 70px 70px;
+	box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
 }
 
-table.center {
-	margin: auto;
-	width: 70%;
+.fl-table {
+	border-radius: 5px;
+	font-size: 15px;
+	font-weight: normal;
+	border: none;
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 100%;
+	white-space: nowrap;
+	background-color: white;
 }
 
-tr, td {
+.fl-table td, .fl-table th {
+	text-align: center;
 	padding: 8px;
-	text-align: center;
 }
 
-tr:hover {
-	background-color: #f5f5f5;
+.fl-table td {
+	border-right: 1px solid #f8f8f8;
+	font-size: 12px;
 }
 
-.container {
-	background-color: #696969;
-	opacity: 0.6;
+.fl-table thead th {
+	color: White;
+	background: Grey;
+}
+
+.fl-table thead th:nth-child(odd) {
+	color: White;
+	background: Grey;
+}
+
+.fl-table tr:nth-child(even) {
+	background: #F8F8F8;
+}
+
+/* Responsive */
+@media ( max-width : 767px) {
+	.fl-table {
+		display: block;
+		width: 100%;
+	}
+	.table-wrapper:before {
+		content: "Scroll horizontally >";
+		display: block;
+		text-align: right;
+		font-size: 11px;
+		color: white;
+		padding: 0 0 10px;
+	}
+	.fl-table thead, .fl-table tbody, .fl-table thead th {
+		display: block;
+	}
+	.fl-table thead th:last-child {
+		border-bottom: none;
+	}
+	.fl-table thead {
+		float: left;
+	}
+	.fl-table tbody {
+		width: auto;
+		position: relative;
+		overflow-x: auto;
+	}
+	.fl-table td, .fl-table th {
+		padding: 20px .625em .625em .625em;
+		height: 60px;
+		vertical-align: middle;
+		box-sizing: border-box;
+		overflow-x: hidden;
+		overflow-y: auto;
+		width: 120px;
+		font-size: 13px;
+		text-overflow: ellipsis;
+	}
+	.fl-table thead th {
+		text-align: left;
+		border-bottom: 1px solid #f7f7f9;
+	}
+	.fl-table tbody tr {
+		display: table-cell;
+	}
+	.fl-table tbody tr:nth-child(odd) {
+		background: none;
+	}
+	.fl-table tr:nth-child(even) {
+		background: transparent;
+	}
+	.fl-table tr td:nth-child(odd) {
+		background: #F8F8F8;
+		border-right: 1px solid #E6E4E4;
+	}
+	.fl-table tr td:nth-child(even) {
+		border-right: 1px solid #E6E4E4;
+	}
+	.fl-table tbody td {
+		display: block;
+		text-align: center;
+	}
 }
 </style>
 <head>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu"
 	rel="stylesheet">
 <meta charset="ISO-8859-1">
-<title>Add Employee Details</title>
+<title>Insert title here</title>
 </head>
-
 <body
 	style="background-image: url('https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80'); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;');">
-	<h1>Add Employee Details</h1>
 
-	<div class="container">
-		<form method="post" action="/api/add">
-			<table BORDER="0" class="center">
-				<tr>
-					<td><label for="usrname"><b>Username</b></label></td>
-					<td><input type="text" id="username" name="username"
-						placeholder="Enter your username" required></td>
-				</tr>
-				<br>
-				<br>
-				<tr>
-					<td><label for="psw"><b>Password</b></label></td>
+	<%
+	response.setHeader("Cache-control", "no-cache");
 
-					<td><input type="password" placeholder="Enter your password"
-						id="psw" name="password"
-						pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-						title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-						required></td>
-				</tr>
-				<br>
-				<br>
-				<tr>
-					<td><label for="Dob"><b>Date of Birth</b></label></td>
-					<td><input type="text" id="Dob" name="Dob"
-						placeholder="Enter your DOB" required></td>
-				</tr>
-				<br>
-				<br>
-				<tr>
-					<td><label for="DoJ"><b>Date of Joining</b></label></td>
-					<td><input type="text" placeholder="Enter your DOJ" id="DoJ"
-						name="DoJ"></td>
-				</tr>
-				<br>
-				<br>
-				<tr>
-					<td><label for="employeeNumber"><b>Employee Number</b></label></td>
+	response.setHeader("Cache-control", "no-store");
+	response.setHeader("Pragma", "no-cache");
 
-					<td><input type="text"
-						placeholder="Enter your Employee Number" id="employeeNumber"
-						name="employeeNumber"></td>
-				</tr>
-				<br>
-				<br>
+	response.setDateHeader("Expire", 0);
+	%>
+	<jsp:include page="header.jsp"></jsp:include>
+	<h2>Employee Details</h2>
+	<div class="table-wrapper">
+		<table class="fl-table">
+			<thead>
 				<tr>
-					<td><label for="firstName"><b>First Name</b></label></td>
-					<td><input type="text" placeholder="Enter your Firstname"
-						id="firstName" name="firstName"></td>
+					<th>ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Gender</th>
+					<th>Role</th>
+					<th>Date Of Birth</th>
+					<th>Date of Joining</th>
+					<th>EMP no.</th>
+					<th>Username</th>
+					<th>Edit</th>
+					<th>Delete</th>
 				</tr>
-				<br>
-				<br>
-				<tr>
-					<td><label for="lastName"><b>Last Name</b></label></td>
-					<td><input type="text" placeholder="Enter your Lastname"
-						id="lastName" name="lastName"></td>
-				</tr>
-				<br>
-				<br>
-				<tr>
-					<td><label for="gender"><b>Gender</b></label></td>
-					<td><input type="radio" id="gender" name="gender" value="Male">
-						Male <input type="radio" id="gender" name="gender" value="Female">
-						Female <input type="radio" id="gender" name="gender"
-						value="Others"> Others</td>
-				</tr>
-				<br>
-				<br>
-				<tr>
-					<td><label for="role"><b>Role</b></label></td>
+			</thead>
+			<tbody>
 
-					<td><select id="role" name="Role">
-							<option value="Admin">Admin</option>
-							<option value="Employee">Employee</option>
-					</select></td>
+				<c:forEach items="${Employeedetails}" var="bt">
+					<tr>
+						<td><c:out value="${bt.getID()}"></c:out></td>
+						<td><c:out value="${bt.getFirstName()}"></c:out></td>
+						<td><c:out value="${bt.getLastName()}"></c:out></td>
+						<td><c:out value="${bt.getGender()}"></c:out></td>
+						<td><c:out value="${bt.getRole()}"></c:out></td>
+						<td><c:out value="${bt.getDob()}"></c:out></td>
+						<td><c:out value="${bt.getDoJ()}"></c:out></td>
+						<td><c:out value="${bt.getEmployeeNumber()}"></c:out></td>
+						<td><c:out value="${bt.getUsername()}"></c:out></td>
+						<td><button
+								onclick="window.location.href='/api/update/${bt.getID()}';">
+								Edit</button></td>
+						<td><button
+								onclick="window.location.href='/api/delete/${bt.getID()}' ;">
+								Delete</button></td>
+					</tr>
 
-
-				</tr>
-				<br>
-				<br>
-				<tr>
-					<td><label for="img"><b>Image</b></label></td>
-					<td><input type="text" placeholder="Image not available"
-						id="img" name="img"></td>
-				</tr>
-			</table>
-			<br> <br> <input type="submit" value="Submit"
-				class="button"> <input type="button" value="Back"
-				class="button" onclick="javascript:history.go(-1)">
-
-
-		</form>
+				</c:forEach>
+		</table>
 	</div>
-
 </body>
+
 </html>
