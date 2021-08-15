@@ -5,16 +5,13 @@
 <style>
 body {
 	text-align: center;
-	color: Black;
+	color: White;
 	border-radius: 5px;
-	background-color: #2F4F4F;
 	font-size: large;
 	font-family: 'Ubuntu', sans-serif;
 	height: 600px;
 	width: 900px;
 	margin: auto;
-	border: 10px solid black;
-	
 }
 
 .button {
@@ -30,7 +27,6 @@ body {
 	cursor: pointer;
 	border-radius: 12px;
 	transition-duration: 0.4s;
-	
 }
 
 .button:hover {
@@ -41,12 +37,10 @@ body {
 }
 
 h1 {
-	color: White;
+	color: white;
 	margin-bottom: -300px;
 	top-padding: 10px;
 	font-size: 55px;
-		text-shadow: 2px 2px 5px black;
-	
 }
 
 table.center {
@@ -64,7 +58,8 @@ tr:hover {
 }
 
 .container {
-	background-color: grey;
+	background-color: #696969;
+	opacity: 0.6;
 }
 </style>
 <head>
@@ -74,7 +69,8 @@ tr:hover {
 	rel="stylesheet">
 </head>
 <h1>Update Employee Details</h1>
-<body>
+<body
+	style="background-image: url('https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80'); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;');">
 
 
 	<div class="container">
