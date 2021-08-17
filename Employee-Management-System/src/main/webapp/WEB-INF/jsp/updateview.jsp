@@ -55,7 +55,7 @@ tr, td {
 }
 
 tr:hover {
-	background-color: #f5f5f5;
+	background-color: black;
 }
 
 .container {
@@ -152,6 +152,7 @@ tr:hover {
 					<td><label for="img"><b>Image</b></label></td>
 					<td><input type="text" value="${theemp.getImg()}" id="img"
 						name="img"></td>
+						<td><input type="file" name="img" id="img" accept="image/png,image/jpeg,image/jpg" /></td>
 				</tr>
 			</table>
 			<br> <br> <input type="submit" value="Update"

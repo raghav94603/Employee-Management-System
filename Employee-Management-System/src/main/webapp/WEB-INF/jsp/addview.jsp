@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <style>
 body {
 	text-align: center;
@@ -55,7 +55,7 @@ tr, td {
 }
 
 tr:hover {
-	background-color: #f5f5f5;
+	background-color: black;
 }
 
 .container {
@@ -75,7 +75,7 @@ tr:hover {
 	<h1>Add Employee Details</h1>
 
 	<div class="container">
-		<form method="post" action="/api/add">
+		<form method="post" action="/api/add" enctype="multipart/form-data">
 			<table BORDER="0" class="center">
 				<tr>
 					<td><label for="usrname"><b>Username</b></label></td>
@@ -155,8 +155,7 @@ tr:hover {
 				<br>
 				<tr>
 					<td><label for="img"><b>Image</b></label></td>
-					<td><input type="text" placeholder="Image not available"
-						id="img" name="img"></td>
+					<td><input type="file" name="image" id="img" accept="image/png,image/jpeg,image/jpg" /></td>
 				</tr>
 			</table>
 			<br> <br> <input type="submit" value="Submit"

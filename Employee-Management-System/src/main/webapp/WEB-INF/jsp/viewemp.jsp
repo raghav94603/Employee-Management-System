@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <style>
 * {
 	box-sizing: border-box;
@@ -15,6 +15,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	background: #302F2F;
 	font-family: 'Ubuntu', sans-serif;
+	width:auto;
 }
 
 h2 {
@@ -35,12 +36,12 @@ h2 {
 
 .fl-table {
 	border-radius: 5px;
-	font-size: 20px;
+	font-size: 12px;
 	font-weight: normal;
 	border: none;
 	border-collapse: collapse;
-	width: 100%;
-	max-width: 100%;
+	width: auto;
+	max-width: auto;
 	white-space: nowrap;
 	background-color: white;
 }
@@ -52,7 +53,7 @@ h2 {
 
 .fl-table td {
 	border-right: 1px solid #f8f8f8;
-	font-size: 20px;
+	font-size: 15px;
 }
 
 .fl-table thead th {
@@ -73,7 +74,7 @@ h2 {
 @media ( max-width : 767px) {
 	.fl-table {
 		display: block;
-		width: 100%;
+		width: auto;
 	}
 	.table-wrapper:before {
 		content: "Scroll horizontally >";
@@ -166,6 +167,7 @@ h2 {
 					<th>Date of Joining</th>
 					<th>EMP no.</th>
 					<th>Username</th>
+					<th>Image</th>
 					<th>Edit</th>
 					<th>Delete</th>
 				</tr>
@@ -183,6 +185,8 @@ h2 {
 						<td><c:out value="${bt.getDoJ()}"></c:out></td>
 						<td><c:out value="${bt.getEmployeeNumber()}"></c:out></td>
 						<td><c:out value="${bt.getUsername()}"></c:out></td>
+						<td><img src="../imagedata/${bt.getImg()}" width="150" height="150"></td>
+                        <td><img src="<c:out value="${bt.getImg()}" />" width="180" height="180"/></td>
 						<td><button
 								onclick="window.location.href='/api/update/${bt.getID()}';">
 								Edit</button></td>
