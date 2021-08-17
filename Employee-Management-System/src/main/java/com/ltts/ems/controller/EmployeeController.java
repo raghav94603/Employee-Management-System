@@ -1,5 +1,9 @@
 package com.ltts.ems.controller;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Date;
 import java.util.List;
 
@@ -10,11 +14,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ltts.ems.model.Attendance_details;
 import com.ltts.ems.model.Employeedetails;
+import com.ltts.ems.repository.EmployeeRepository;
 import com.ltts.ems.service.AttendanceService;
 import com.ltts.ems.service.EmployeeService;
 
@@ -30,14 +38,38 @@ public class EmployeeController {
 	@Autowired
 	AttendanceService apr;
 
+	@Autowired
+	EmployeeRepository repo;
 	/**
 	 * This method handles the request for adding employee details
 	 * @param theEmployee
 	 * @param model
 	 * @return
 	 */
+	public static String uploadDirectory=System.getProperty("user.dir")+"/src/main/webapp/WEB-INF/imagedata";
+	
+	
+	
+	
 	@PostMapping("/add")
-	public ModelAndView addUser(Employeedetails theEmployee, Model model) {
+	@ResponseBody
+	
+	public ModelAndView addUser(Employeedetails theEmployee, Model model,@RequestParam("image") MultipartFile file) {
+		
+		StringBuilder fileNames=new StringBuilder();
+		String filename=theEmployee.getID()+file.getOriginalFilename();//.substring(file.getOriginalFilename().length()-4);
+		
+		Path fileNameAndPath=Paths.get(uploadDirectory,filename);
+		
+		try {
+			Files.write(fileNameAndPath,file.getBytes());
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+		theEmployee.setImg(filename);
+		
 		emp.save(theEmployee);
 		List<Employeedetails> bt = (List<Employeedetails>) emp.findAll();
 		model.addAttribute("Employeedetails", bt);

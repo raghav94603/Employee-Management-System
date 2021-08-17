@@ -18,6 +18,17 @@ public class Employeedetails {
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private int ID;
 	    private String username;
+	    private Date DoJ;
+		private String Role;
+		
+		private String Img;
+		private String password;
+		private String FirstName;
+		private String LastName;
+		private String EmployeeNumber;
+		private Date Dob;
+		private String Gender;
+		
 		public String getUsername() {
 			return username;
 		}
@@ -30,11 +41,7 @@ public class Employeedetails {
 
 
 
-		private String FirstName;
-		private String LastName;
-		private String EmployeeNumber;
-		private Date Dob;
-		private String Gender;
+		
 		public int getID() {
 			return ID;
 		}
@@ -50,10 +57,7 @@ public class Employeedetails {
 
 
 
-		private Date DoJ;
-		private String Role;
-		private String Img;
-		private String password;
+		
 		
 		/**
 		 * @return
