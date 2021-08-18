@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>About</title>
 </head>
 <body style="background-image: url('https://cutewallpaper.org/21/developer-wallpaper/Magnificent-Developer-Wallpaper-Full-HD-Pictures.jpg');">
 <jsp:include page="header.jsp"></jsp:include>

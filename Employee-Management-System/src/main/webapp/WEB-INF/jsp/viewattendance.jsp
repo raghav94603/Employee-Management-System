@@ -173,7 +173,8 @@ response.setDateHeader("Expire", 0);
 <c:forEach items="${Attendancedetails}" var="atten">
 
 <tr>
-<td>${Employeedetails.getID()}</td>
+<td>${atten.getID().ID}</td>
+
  <td><c:out value="${atten.getTask()}"></c:out></td>
  <td><c:out value="${atten.getActivity()}"></c:out></td>
  <td><c:out value="${atten.getPhase()}"></c:out></td>

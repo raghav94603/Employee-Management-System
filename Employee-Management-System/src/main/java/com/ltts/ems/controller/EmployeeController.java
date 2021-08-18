@@ -46,7 +46,7 @@ public class EmployeeController {
 	 * @param model
 	 * @return
 	 */
-	public static String uploadDirectory=System.getProperty("user.dir")+"/src/main/webapp/WEB-INF/imagedata";
+	public static String uploadDirectory=System.getProperty("user.dir")+"/src/main/webapp/imagedata";
 	
 	
 	
@@ -122,21 +122,39 @@ public class EmployeeController {
 	 * @param m
 	 * @return
 	 */
+	
 	@RequestMapping(value = "/update/{id}")
+	
 	public ModelAndView updateview(@PathVariable int id,Model m) {
 		Employeedetails theemp=emp.findById(id);
 		m.addAttribute("theemp",theemp);
 		return new ModelAndView("updateview");
 	}
 	@PostMapping(value = "/updateemployee/{id}")
-	public ModelAndView update(Employeedetails theemp,Model model,@PathVariable int id) {
+	@ResponseBody
+	public ModelAndView update(Employeedetails theemp,Model model,@PathVariable int id,@RequestParam("image") MultipartFile file) {
 		theemp.setID(id);
+		
+		StringBuilder fileNames=new StringBuilder();
+		String filename=theemp.getID()+file.getOriginalFilename();//.substring(file.getOriginalFilename().length()-4);
+		
+		Path fileNameAndPath=Paths.get(uploadDirectory,filename);
+		
+		try {
+			Files.write(fileNameAndPath,file.getBytes());
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+		theemp.setImg(filename);
+		
 		emp.save(theemp);
 		
 		List<Employeedetails> bt = (List<Employeedetails>) emp.findAll();
 		model.addAttribute("Employeedetails", bt);
 		
-		return new ModelAndView("viewemp");
+		return new ModelAndView("dashboard");
 	}
 	/**
 	 * This method handles the request for navigation bar

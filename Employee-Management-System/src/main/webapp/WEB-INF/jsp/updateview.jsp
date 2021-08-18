@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <style>
 body {
 	text-align: center;
@@ -75,7 +75,7 @@ tr:hover {
 
 
 	<div class="container">
-		<form method="post" action="/api/updateemployee/${theemp.getID() }">
+		<form method="post" action="/api/updateemployee/${theemp.getID() }" enctype="multipart/form-data">
 			<table BORDER="0" class="center">
 				<tr>
 					<td><label for="usrname"><b>Username</b></label></td>
@@ -96,14 +96,14 @@ tr:hover {
 				<br>
 				<tr>
 					<td><label for="Dob"><b>Date of Birth</b></label></td>
-					<td><input type="text" id="Dob" name="Dob"
+					<td><input type="date" id="Dob" name="Dob"
 						value="${theemp.getDob()}" required></td>
 				</tr>
 				<br>
 				<br>
 				<tr>
 					<td><label for="DoJ"><b>Date of Joining</b></label></td>
-					<td><input type="text" value="${theemp.getDoJ()}" id="DoJ"
+					<td><input type="date" value="${theemp.getDoJ()}" id="DoJ"
 						name="DoJ"></td>
 				</tr>
 				<br>
@@ -142,17 +142,17 @@ tr:hover {
 				<br>
 				<br>
 				<tr>
-					<td><label for="role"><b>Role</b></label></td>
-					<td><input type="text" value="${theemp.getRole()}" id="role"
-						name="role"></td>
+				<td><label for="role"><b>Role</b></label></td>
+					<td><select id="role" name="Role">
+							<option value="Admin">Admin</option>
+							<option value="Employee">Employee</option>
+					</select></td>
 				</tr>
 				<br>
 				<br>
 				<tr>
 					<td><label for="img"><b>Image</b></label></td>
-					<td><input type="text" value="${theemp.getImg()}" id="img"
-						name="img"></td>
-						<td><input type="file" name="img" id="img" accept="image/png,image/jpeg,image/jpg" /></td>
+					<td><input type="file" name="image" id="img" accept="image/png,image/jpeg,image/jpg" /></td>
 				</tr>
 			</table>
 			<br> <br> <input type="submit" value="Update"

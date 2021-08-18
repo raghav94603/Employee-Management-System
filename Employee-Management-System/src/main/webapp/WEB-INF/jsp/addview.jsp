@@ -71,7 +71,9 @@ tr:hover {
 </head>
 
 <body
+
 	style="background-image: url('https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80'); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;');">
+	
 	<h1>Add Employee Details</h1>
 
 	<div class="container">
@@ -97,14 +99,14 @@ tr:hover {
 				<br>
 				<tr>
 					<td><label for="Dob"><b>Date of Birth</b></label></td>
-					<td><input type="text" id="Dob" name="Dob"
+					<td><input type="date" id="Dob" name="Dob"
 						placeholder="Enter your DOB" required></td>
 				</tr>
 				<br>
 				<br>
 				<tr>
 					<td><label for="DoJ"><b>Date of Joining</b></label></td>
-					<td><input type="text" placeholder="Enter your DOJ" id="DoJ"
+					<td><input type="date" placeholder="Enter your DOJ" id="DoJ"
 						name="DoJ"></td>
 				</tr>
 				<br>

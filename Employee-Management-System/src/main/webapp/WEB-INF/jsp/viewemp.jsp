@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<title>Employee List</title>
 <style>
 * {
 	box-sizing: border-box;
@@ -36,7 +37,7 @@ h2 {
 
 .fl-table {
 	border-radius: 5px;
-	font-size: 12px;
+	font-size: 15px;
 	font-weight: normal;
 	border: none;
 	border-collapse: collapse;
@@ -48,12 +49,12 @@ h2 {
 
 .fl-table td, .fl-table th {
 	text-align: center;
-	padding: 15px;
+	padding: 20px;
 }
 
 .fl-table td {
 	border-right: 1px solid #f8f8f8;
-	font-size: 15px;
+	font-size: 20px;
 }
 
 .fl-table thead th {
@@ -185,8 +186,8 @@ h2 {
 						<td><c:out value="${bt.getDoJ()}"></c:out></td>
 						<td><c:out value="${bt.getEmployeeNumber()}"></c:out></td>
 						<td><c:out value="${bt.getUsername()}"></c:out></td>
-						<td><img src="../imagedata/${bt.getImg()}" width="150" height="150"></td>
-                        <td><img src="<c:out value="${bt.getImg()}" />" width="180" height="180"/></td>
+						<td><img src="../imagedata/${bt.getImg()}" width="70" height="70"></td>
+                        
 						<td><button
 								onclick="window.location.href='/api/update/${bt.getID()}';">
 								Edit</button></td>
