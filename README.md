@@ -39,3 +39,6 @@ Repo for Employee Management System
 ## login page
 ![Screenshot 2021-08-23 203010](https://user-images.githubusercontent.com/84500811/130470172-507b5519-e1df-47d2-af57-014536ce8c14.jpg)
 
+## Employee details
+![Screenshot 2021-08-23 203802](https://user-images.githubusercontent.com/84500811/130471478-c56e356b-5012-4f31-9eeb-c44527c502f1.jpg)
+
