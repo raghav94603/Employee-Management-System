@@ -34,3 +34,8 @@ Repo for Employee Management System
 |LR_15|validate login|HR_06|Implemented|
 |LR_15|error page jsp|HR_06|Implemented|
 
+
+# high level diagram
+## login page
+![Screenshot 2021-08-23 203010](https://user-images.githubusercontent.com/84500811/130470172-507b5519-e1df-47d2-af57-014536ce8c14.jpg)
+
