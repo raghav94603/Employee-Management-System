@@ -42,3 +42,5 @@ Repo for Employee Management System
 ## Employee details
 ![Screenshot 2021-08-23 203802](https://user-images.githubusercontent.com/84500811/130471478-c56e356b-5012-4f31-9eeb-c44527c502f1.jpg)
 
+## dashboard
+![Screenshot 2021-08-24 114836](https://user-images.githubusercontent.com/84500811/130566244-dfc49508-abcc-426a-b59c-eeb6bc8b00ba.jpg)
