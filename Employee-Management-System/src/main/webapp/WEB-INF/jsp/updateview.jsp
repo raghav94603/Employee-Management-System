@@ -5,7 +5,7 @@
 <style>
 body {
 	text-align: center;
-	color: White;
+	color: Black;
 	border-radius: 5px;
 	font-size: large;
 	font-family: 'Ubuntu', sans-serif;
@@ -38,7 +38,7 @@ body {
 }
 
 h1 {
-	color: white;
+	color: #2EE59D;
 	margin-bottom: -300px;
 	top-padding: 10px;
 	font-size: 55px;
@@ -55,12 +55,12 @@ tr, td {
 }
 
 tr:hover {
-	background-color: black;
+	background-color: White;
 }
 
 .container {
 	background-color: #696969;
-	opacity: 0.6;
+	opacity: 0.7;
 }
 </style>
 <head>
