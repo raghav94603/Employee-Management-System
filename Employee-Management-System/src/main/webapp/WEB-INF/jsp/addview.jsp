@@ -60,7 +60,7 @@ tr:hover {
 
 .container {
 	background-color: #696969;
-	opacity:  0.7;
+	opacity:  0.6;
 }
 </style>
 <head>
