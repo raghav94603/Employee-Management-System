@@ -138,10 +138,6 @@ div {
             <use xlink:href="#icon-AttendanceStatus" />
           </svg> <span class="invisible">Attendance Status</span>
 			</a></li>
-			<li><a href="/api/navabout"> <svg class="icon icon--2x">
-            <use xlink:href="#icon-about" />
-          </svg> <span class="invisible">About us</span>
-			</a></li>
 			<li><a href="/api/log"> <svg class="icon icon--2x">
             <use xlink:href="#icon-logout" />
           </svg> <span class="invisible">Sign outs</span>
@@ -160,15 +156,7 @@ div {
 		<path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
 		<line x1="12" y1="2" x2="12" y2="12"></line>  
     </symbol>
-    </a>
-    <symbol id="icon-about" width="100" height="100" viewBox="0 0 24 24"
-			fill="none" stroke="#d1cccc" stroke-width="1.5"
-			stroke-linecap="square" stroke-linejoin="round">
-		<circle cx="12" cy="12" r="10"></circle>
-		<line x1="12" y1="16" x2="12" y2="12"></line>
-		<line x1="12" y1="8" x2="12.01" y2="8"></line>
-      
-    </symbol>
+    
     <symbol id="icon-attendance" width="100" height="100"
 			viewBox="0 0 24 24" fill="none" stroke="#d1cccc" stroke-width="1.5"
 			stroke-linecap="round" stroke-linejoin="round">
