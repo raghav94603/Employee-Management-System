@@ -49,12 +49,12 @@ h2 {
 
 .fl-table td, .fl-table th {
 	text-align: center;
-	padding: 20px;
+	padding: 10px;
 }
 
 .fl-table td {
 	border-right: 1px solid #f8f8f8;
-	font-size: 20px;
+	font-size: 23px;
 }
 
 .fl-table thead th {
