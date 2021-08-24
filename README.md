@@ -1,6 +1,6 @@
-# Employee-Management-System
+# Employee Management System
 
-## High level Requirement
+## High level Requirements:
 
 
 |      ID          |Description                          |Status                         |
@@ -16,36 +16,36 @@
 ##  Low level Requirements:
 |      ID          |Description                          |  HLR_ID  |Status               |
 |----------------|-------------------------------|----------|-----------------------------|
-|LR_01|login page - jsp |HR_01|Implemented
-|LR_02|validate password|HR_01|Implemented
-|LR_03|controll to dashboard|HR_01|Implemented
-|LR_04| Dashboard - jsp|HR_02|Implemented
-|LR_05|econtrol to other options|HR_02|Implemented
-|LR_06|employee create details|HR_04|Implemented
-|LR_07|employee udpate|HR_04|Implemented
-|LR_08|employee view|HR_04|Implemented
-|LR_09|employee view|HR_01|Implemented
-|LR_10|employee dao|HR_04|Implemented
-|LR_11|Attendance form|HR_05|Implemented
-|LR_12|attendance accept request|HR_05|Implemented
-|LR_13|admin validate attendance|HR_06|Implemented
-|LR_14|admin dashboard|HR_06|Implemented|
-|LR_15|admin control employee login|HR_06|Implemented|
-|LR_15|validate login|HR_07|Implemented|
-|LR_15|error page jsp|HR_07|Implemented|
+|LR_01|Login page |HR_01|Implemented
+|LR_02|Validate password|HR_01|Implemented
+|LR_03|Control to dashboard|HR_01|Implemented
+|LR_04| Dashboard(Employee & Admin)|HR_02|Implemented
+|LR_05|Control to other options|HR_02|Implemented
+|LR_06|Employee create details|HR_04|Implemented
+|LR_07|Employee data udpate|HR_04|Implemented
+|LR_08|Employee data view|HR_04|Implemented
+|LR_09|Employee view|HR_01|Implemented
+|LR_10|Employee Repository|HR_04|Implemented
+|LR_11|Attendance Form|HR_05|Implemented
+|LR_12|Attendance accept request|HR_05|Implemented
+|LR_13|Attendance reject request|HR_05|Implemented
+|LR_14|Admin validate attendance|HR_06|Implemented
+|LR_15|Admin control employee login|HR_06|Implemented|
+|LR_16|Validate login|HR_07|Implemented|
+|LR_17|Error page-jsp|HR_07|Implemented|
 
 
-# high level diagram
-## login page
+# High level diagram
+## Login Page
 ![Screenshot 2021-08-23 203010](https://user-images.githubusercontent.com/84500811/130470172-507b5519-e1df-47d2-af57-014536ce8c14.jpg)
 
-## Employee details
+## Employee Details
 ![Screenshot 2021-08-24 115948](https://user-images.githubusercontent.com/84500811/130567417-5e2e9418-4d1f-4571-a08f-fab04112f108.jpg)
 
-## Attendnace details
+## Attendance Details
 ![Screenshot 2021-08-24 120502](https://user-images.githubusercontent.com/84500811/130568060-731e12df-f6f9-453e-833c-e423235571d7.jpg)
 
-## dashboard
+## Dashboard
 ![Screenshot 2021-08-24 114836](https://user-images.githubusercontent.com/84500811/130566244-dfc49508-abcc-426a-b59c-eeb6bc8b00ba.jpg)
 
 ## Admin 
