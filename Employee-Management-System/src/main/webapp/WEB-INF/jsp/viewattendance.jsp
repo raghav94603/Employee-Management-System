@@ -162,10 +162,10 @@ response.setDateHeader("Expire", 0);
             <th>Activity</th>
             <th>Phase</th>
             <th>Mark date</th>
-            <th>Day</th>
+            
             <th>Location</th>
-            <th>Accept</th>
-            <th>Reject</th>
+            <th>Accepted</th>
+            <th>Rejected</th>
         </tr>
         </thead>
         <tbody>
@@ -179,7 +179,7 @@ response.setDateHeader("Expire", 0);
  <td><c:out value="${atten.getActivity()}"></c:out></td>
  <td><c:out value="${atten.getPhase()}"></c:out></td>
  <td><c:out value="${atten.getMarkdate()}"></c:out></td>
- <td><c:out value="${atten.getDay()}"></c:out></td>
+ 
  <td><c:out value="${atten.getLocation()}"></c:out></td>
  
  <%  Attendance_details atten = (Attendance_details)pageContext.getAttribute("atten");

@@ -25,7 +25,7 @@ public class Attendance_details {
         private String activity;
         private String phase;
         private Date markdate;
-        private String day;
+       // private String day;
         private int hours;
         private String status="Pending";
         public String getStatus() {
@@ -65,12 +65,8 @@ public class Attendance_details {
 		public void setMarkdate(Date markdate) {
 			this.markdate = markdate;
 		}
-		public String getDay() {
-			return day;
-		}
-		public void setDay(String day) {
-			this.day = day;
-		}
+		
+		
 		public int getHours() {
 			return hours;
 		}
@@ -90,14 +86,14 @@ public class Attendance_details {
 		}
 		
 		public Attendance_details(int task, Employeedetails iD, String activity, String phase, Date markdate,
-				String day, int hours, String status, String location) {
+				 int hours, String status, String location) {
 			super();
 			this.task = task;
 			ID = iD;
 			this.activity = activity;
 			this.phase = phase;
 			this.markdate = markdate;
-			this.day = day;
+			//this.day = day;
 			this.hours = hours;
 			this.status = status;
 			this.location = location;
@@ -105,7 +101,7 @@ public class Attendance_details {
 		@Override
 		public String toString() {
 			return "Attendance_details [task=" + task + ", activity=" + activity + ", phase=" + phase + ", markdate="
-					+ markdate + ", day=" + day + ", hours=" + hours + ", location=" + location + "]";
+					+ markdate + ", hours=" + hours + ", location=" + location + "]";
 		}
         
         

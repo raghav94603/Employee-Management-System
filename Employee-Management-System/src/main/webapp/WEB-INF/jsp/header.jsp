@@ -32,11 +32,12 @@
 
 /* Add a color to the active/current link */
 .topnav a.active {
-	background-color: White;
-	color: Black;
+	
+	color: white;
 		font-family: 'Ubuntu', sans-serif;
 	
 }
+
 </style>
 <head>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu"
@@ -47,9 +48,13 @@
 
 <body>
 	<div class="topnav">
-		<a class="active" href="/api/navdash">Dashboard</a> <a
-			href="/api/navabout">About</a> <a href="/api/log">Logout</a> <a
+		<a  href="/api/navdash">Dashboard</a>
+		 <a
+			href="/api/navabout">About</a> 
+			
+			<a
 			href="/api/navdash">Back</a>
+			<a href="/api/log">Logout</a> 
 	</div>
 
 </body>
